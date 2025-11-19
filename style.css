@@ -353,8 +353,8 @@ ul {
 .hero-logo {
   position: absolute;
   top: 24px;            /* distance from top of the green card */
-  right: 32px;          /* distance from right edge */
-  height: 50px;        /* << change this number for bigger/smaller logo */
+  right: 40px;          /* distance from right edge */
+  height: 25px;        /* << change this number for bigger/smaller logo */
   width: auto;
   z-index: 10;
 }
