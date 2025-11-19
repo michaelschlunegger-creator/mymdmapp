@@ -339,44 +339,32 @@ ul {
   .answer-options {
     grid-template-columns: 1fr;
   }
-}
-/* CODA logo – simple header placement */
+/* ------------------------------- */
+/* CLEAN CODA LOGO CONFIGURATION   */
+/* ------------------------------- */
+
+/* Remove old container styling */
 .logo-container {
-  padding-top: 6px;   /* distance from the top of the page */
-  padding-left: 120px;  /* from the left edge */
+  padding: 0;
 }
-/* Logo size */
+
+/* Remove old small logo sizing */
 .coda-logo {
-  height: 24px;     /* small logo */
-  width: auto;
-  display: block;
-}
-
-/* FINAL OVERRIDE: force CODA logo to stay small */
-.hero-card {
-  position: relative;       /* allows absolute positioning inside */
-}
-
-/* CODA logo top-right in hero card */
-.hero-logo {
-  position: absolute;
-  top: 8px;                /* distance from the top edge of the card */
-  right: 12px;              /* distance from the right edge of the card */
-  height: 32px;             /* adjust size here if you want bigger/smaller */
+  height: auto;
   width: auto;
 }
 
-}/* Position CODA logo nicely in top-right of the green hero card */
+/* Hero card must allow absolute positioning */
 .hero-card {
   position: relative;
 }
 
+/* Final and only logo style */
 .hero-logo {
   position: absolute;
-  top: 24px;      /* distance from top edge of the card */
-  right: 32px;    /* distance from right edge of the card */
-  height: 48px;   /* logo size – change this later if needed */
+  top: 24px;       /* logo vertical position */
+  right: 32px;     /* logo horizontal position */
+  height: 100px;   /* <<< CHANGE THIS TO MAKE BIGGER/SMALLER */
   width: auto;
   z-index: 10;
 }
-
