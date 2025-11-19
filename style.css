@@ -352,3 +352,10 @@ ul {
   display: block;
 }
 
+/* FINAL OVERRIDE: force CODA logo to stay small */
+.hero-card .coda-logo {
+  height: 12px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
