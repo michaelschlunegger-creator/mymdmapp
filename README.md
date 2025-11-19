@@ -1,20 +1,20 @@
 # CODA MDM Sales Trainer
 
-A fully deterministic, browser-based Master Data Management (MDM) sales training simulator. Practice pitching CODA's MDM platform against realistic executive and plant personas, learn how each answer lands, and receive coaching on how to advance the deal.
+A fully deterministic, browser-based Master Data Management (MDM) sales training simulator. Practice pitching CODA's MDM platform across industries, learn what each persona values, and receive coaching on how to advance every conversation toward a PoC.
 
 ## Training approach
 
-- Every persona includes a storyline, value focus, and a recommended question flow so reps know how to approach that vertical.
-- Each scenario begins with a dramatic open question from the sales rep that surfaces three likely persona answers labelled **Optimal**, **Medium**, or **Unfavorable** with contextual coaching.
-- Follow-up stages convert into closed questions that narrow scope, reinforce the red path toward a PoC, and conclude with an explicit PoC commitment ask.
+- Choose an industry first, then a persona (CFO, CEO, CTO, Supply Chain Head, Warehouse Head) to see their storyline, value lens, red-path guidance, and top question themes.
+- Every scenario begins with a dramatic open question that hooks the persona on cost or risk. Subsequent stages convert into closed questions so students narrow scope before the final PoC ask.
+- Each answer is clearly labeled **Optimal**, **Medium**, or **Unfavorable**, with context explaining why and how it shifts the red path.
 - The right rail surfaces real-time feedback (why the answer mattered, what the persona is thinking, and the next step on the red path) plus an end-of-session evaluation.
 
 ## Project structure
 
 ```
-├── index.html   # App markup
-├── style.css    # Layout and visual design
-├── script.js    # Persona packs, scenarios, and interaction logic
+├── index.html   # App markup and Apple-inspired layout
+├── style.css    # Light, Apple-style presentation with soft shadows and chips
+├── script.js    # Industry selector, persona packs, scenarios, and coaching logic
 ```
 
 All persona packs, scenarios, and evaluation logic are stored inside `script.js` so the experience remains self-contained and easy to edit.
