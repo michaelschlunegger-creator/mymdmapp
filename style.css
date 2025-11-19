@@ -344,47 +344,17 @@ ul {
 /* ------------------------------- */
 
 /* Remove old container styling */
-.logo-container {
-  padding: 0;
-}
+/* --- CODA logo in hero card --- */
 
-/* Remove old small logo sizing */
-.coda-logo {
-  height: auto;
-  width: auto;
-}
-
-/* Hero card must allow absolute positioning */
 .hero-card {
-  position: relative;
+  position: relative;   /* needed for absolute positioning of the logo */
 }
 
-/* Final and only logo style */
 .hero-logo {
   position: absolute;
-  top: 24px;       /* logo vertical position */
-  right: 32px;     /* logo horizontal position */
-  height: 100px;   /* <<< CHANGE THIS TO MAKE BIGGER/SMALLER */
+  top: 24px;            /* distance from top of the green card */
+  right: 32px;          /* distance from right edge */
+  height: 100px;        /* << change this number for bigger/smaller logo */
   width: auto;
   z-index: 10;
-}
-/* Position the CODA logo inside the hero card */
-.hero-card {
-  position: relative;
-}
-
-/* Final logo position + size */
-.hero-logo {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  height: 120px;   /* Change size here */
-  width: auto;
-  z-index: 10;
-}
-
-/* Completely disable old logo rules */
-.logo-container,
-.coda-logo {
-  display: none !important;
 }
