@@ -346,4 +346,17 @@ ul {
   margin-left: 12px;
   display: block;
 }
+/* Logo container spacing */
+.logo-container {
+  padding-top: 30px;      /* distance from the top */
+  padding-left: 20px;     /* left spacing */
+}
+
+/* Logo size override */
+.coda-logo {
+  height: 24px !important;     /* much smaller logo */
+  width: auto !important;      /* keep proportions */
+  display: block;
+}
+
 
