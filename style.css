@@ -341,7 +341,7 @@ ul {
   }
 }
 .CODA LOGO {
-  height: 48px;       /* adjust size if too big/small */
+  height: 24px;       /* adjust size if too big/small */
   margin: 16px;       /* space around the logo */
   display: block;     /* ensures it sits nicely above the content */
 }
