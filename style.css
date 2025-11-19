@@ -65,8 +65,8 @@ ul {
   position: absolute;
   top: 18px;
   right: 18px;
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: auto;
 }
 
 .eyebrow {
