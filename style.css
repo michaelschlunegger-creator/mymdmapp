@@ -1,3 +1,5 @@
+/* GLOBAL ------------------------------------------------------ */
+
 :root {
   font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #0b1220;
@@ -5,9 +7,9 @@
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -21,9 +23,7 @@ img {
   display: block;
 }
 
-ul {
-  list-style: none;
-}
+/* LAYOUT ------------------------------------------------------- */
 
 .app-layout {
   display: grid;
@@ -48,61 +48,74 @@ ul {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 28px;
   padding: 24px;
-  box-shadow: 0 24px 60px rgba(10, 20, 40, 0.08);
+  box-shadow: 0 24px 60px rgba(10,20,40,0.08);
   backdrop-filter: blur(12px);
 }
+
+/* HERO CARD ---------------------------------------------------- */
+
+.hero-card {
+  position: relative;
+  background: linear-gradient(130deg, #0a84ff, #30d158 65%, #af52de);
+  padding: 32px;
+  border-radius: 28px;
+  color: white;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.15);
 }
 
-.hero-logo {
+.hero-card .hero-logo {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 64px;
-  height: 64px;
+  top: 22px;
+  right: 24px;
+  width: 120px;
+  height: auto;
 }
 
-.eyebrow {
-  font-size: 0.75rem;
+.hero-card .eyebrow {
+  font-size: .75rem;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #7c8aa0;
+  letter-spacing: .12em;
+  margin-bottom: 10px;
+  color: rgba(255,255,255,0.9);
 }
 
-.hero-logo .eyebrow {
-  color: rgba(255, 255, 255, 0.8);
+.hero-card h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 
-.hero-logo h1 {
-  font-size: 1.7rem;
-  margin: 10px 0 8px;
+.hero-card p {
+  font-size: 1rem;
+  line-height: 1.45;
 }
+
+/* STEPS IN HERO ------------------------------------------------ */
 
 .flow-steps {
-  margin-top: 16px;
-  list-style: none;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 0;
 }
 
 .flow-steps li {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
+  gap: 12px;
 }
 
 .flow-steps span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
 }
+
+/* SELECTORS ---------------------------------------------------- */
 
 .selector-block {
   display: flex;
@@ -113,30 +126,28 @@ ul {
 .selector-block h2 {
   font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   color: #6c778c;
+  letter-spacing: 0.08em;
 }
 
-.chip-list,
-.persona-list,
-.scenario-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.placeholder {
+  font-size: 0.9rem;
+  color: #8c94a6;
 }
+
+/* Buttons (industry, persona, scenario) ------------------------ */
 
 .chip-list button,
 .persona-list button,
 .scenario-list button {
   width: 100%;
-  border: 1px solid rgba(12, 18, 32, 0.12);
+  padding: 12px 16px;
   border-radius: 16px;
-  padding: 11px 16px;
   text-align: left;
+  border: 1px solid rgba(12,18,32,0.12);
   background: #f5f7fb;
-  color: inherit;
   cursor: pointer;
-  transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition: all .2s ease;
 }
 
 .chip-list button:hover,
@@ -146,85 +157,43 @@ ul {
 .persona-list button.active,
 .scenario-list button.active {
   border-color: #0a84ff;
-  box-shadow: 0 12px 30px rgba(10, 132, 255, 0.18);
+  box-shadow: 0 12px 30px rgba(10,132,255,0.18);
   transform: translateY(-1px);
 }
 
-.placeholder {
-  font-size: 0.9rem;
-  color: #8c94a6;
-}
-
-.industry-details,
-.persona-brief ul {
-  line-height: 1.55;
-}
-
-.industry-details ul,
-.persona-brief ul {
-  padding-left: 18px;
-  margin-top: 8px;
-}
-
-.persona-brief h2 {
-  margin-bottom: 8px;
-}
-
-.persona-brief .grid-two {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 16px 0;
-}
-
-.persona-role {
-  color: #4a5161;
-  margin-bottom: 8px;
-}
-
-.conversation-panel {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  min-height: 520px;
-}
+/* CONVERSATION PANEL ------------------------------------------ */
 
 .scenario-header {
   display: flex;
   justify-content: space-between;
-  gap: 14px;
   align-items: flex-start;
 }
 
 .ghost-btn {
-  border: 1px solid rgba(12, 18, 32, 0.2);
-  background: transparent;
-  border-radius: 999px;
   padding: 6px 18px;
+  border: 1px solid rgba(12,18,32,0.2);
+  border-radius: 999px;
+  background: transparent;
   cursor: pointer;
 }
 
 .ghost-btn:disabled {
-  opacity: 0.4;
+  opacity: .4;
   cursor: not-allowed;
 }
 
 .progress-wrapper {
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.progress-label {
-  font-size: 0.9rem;
-  color: #4a4f5c;
-}
-
 .progress-bar {
   width: 100%;
   height: 6px;
-  border-radius: 999px;
   background: #e2e6ef;
+  border-radius: 999px;
   overflow: hidden;
 }
 
@@ -233,13 +202,14 @@ ul {
   width: 0%;
   border-radius: inherit;
   background: linear-gradient(90deg, #0a84ff, #30d158);
-  transition: width 0.2s ease;
+  transition: width .2s;
 }
 
 .conversation-log {
-  border: 1px solid rgba(12, 18, 32, 0.08);
-  border-radius: 22px;
+  margin-top: 14px;
   padding: 18px;
+  border: 1px solid rgba(12,18,32,0.08);
+  border-radius: 22px;
   min-height: 220px;
   max-height: 360px;
   overflow-y: auto;
@@ -248,34 +218,11 @@ ul {
   gap: 14px;
 }
 
-.conversation-entry {
-  padding-bottom: 12px;
-  border-bottom: 1px solid rgba(12, 18, 32, 0.08);
-}
-
-.conversation-entry:last-child {
-  border-bottom: none;
-}
-
-.stage-type {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #8a93a9;
-  letter-spacing: 0.08em;
-}
-
-.question {
-  margin: 4px 0;
-  font-weight: 600;
-}
-
-.answer {
-  font-size: 0.95rem;
-  line-height: 1.45;
-}
+/* CURRENT QUESTION --------------------------------------------- */
 
 .current-step {
-  border: 1px solid rgba(12, 18, 32, 0.08);
+  margin-top: 14px;
+  border: 1px solid rgba(12,18,32,0.08);
   border-radius: 22px;
   padding: 18px;
 }
@@ -292,83 +239,30 @@ ul {
 }
 
 .answer-button {
-  border: 1px solid rgba(12, 18, 32, 0.12);
-  border-radius: 18px;
   padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(12,18,32,0.12);
   background: #f7f8fb;
-  text-align: left;
+  transition: all .2s ease;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .answer-button:hover {
   transform: translateY(-1px);
   border-color: #0a84ff;
-  box-shadow: 0 10px 26px rgba(10, 132, 255, 0.12);
+  box-shadow: 0 10px 26px rgba(10,132,255,0.12);
 }
 
-.answer-button .quality {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.quality-optimal {
-  border-color: rgba(48, 209, 88, 0.3);
-}
-
-.quality-optimal .quality {
-  color: #1a9c40;
-}
-
-.quality-medium {
-  border-color: rgba(255, 204, 0, 0.35);
-}
-
-.quality-medium .quality {
-  color: #a05a00;
-}
-
-.quality-unfavorable {
-  border-color: rgba(255, 69, 58, 0.35);
-}
-
-.quality-unfavorable .quality {
-  color: #b52620;
-}
-
-.coaching-panel section {
-  line-height: 1.55;
-  min-height: 120px;
-}
-
-.feedback-panel #feedbackContent {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+/* FEEDBACK PANEL ---------------------------------------------- */
 
 .feedback-card {
-  border: 1px solid rgba(12, 18, 32, 0.08);
-  border-radius: 18px;
   padding: 16px;
+  border: 1px solid rgba(12,18,32,0.08);
+  border-radius: 18px;
   background: #f8f9fd;
 }
 
-.answer.quality-optimal {
-  color: #1a9c40;
-}
-
-.answer.quality-medium {
-  color: #a05a00;
-}
-
-.answer.quality-unfavorable {
-  color: #b52620;
-}
+/* MOBILE ------------------------------------------------------- */
 
 @media (max-width: 1200px) {
   .app-layout {
@@ -378,12 +272,10 @@ ul {
 
 @media (max-width: 640px) {
   .selector-panel,
-  .persona-brief,
   .conversation-panel,
   .coaching-panel section {
     padding: 18px;
   }
-
   .conversation-log {
     max-height: none;
   }
