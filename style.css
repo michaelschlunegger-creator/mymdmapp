@@ -347,15 +347,23 @@ ul {
 }
 /* Logo size */
 .coda-logo {
-  height: 3px;     /* small logo */
+  height: 12px;     /* small logo */
   width: auto;
   display: block;
 }
 
 /* FINAL OVERRIDE: force CODA logo to stay small */
-.hero-card .coda-logo {
-  height: 24px !important;
-  width: auto !important;
-  object-fit: contain !important;
-  display: block !important;
+.hero-card {
+  position: relative;       /* allows absolute positioning inside */
+}
+
+/* CODA logo top-right in hero card */
+.hero-logo {
+  position: absolute;
+  top: 16px;                /* distance from the top edge of the card */
+  right: 24px;              /* distance from the right edge of the card */
+  height: 32px;             /* adjust size here if you want bigger/smaller */
+  width: auto;
+}
+
 }
