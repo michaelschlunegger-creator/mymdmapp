@@ -366,4 +366,17 @@ ul {
   width: auto;
 }
 
+}/* Position CODA logo nicely in top-right of the green hero card */
+.hero-card {
+  position: relative;
 }
+
+.hero-logo {
+  position: absolute;
+  top: 24px;      /* distance from top edge of the card */
+  right: 32px;    /* distance from right edge of the card */
+  height: 48px;   /* logo size – change this later if needed */
+  width: auto;
+  z-index: 10;
+}
+
