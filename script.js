@@ -1,4 +1,5 @@
 const industries = getIndustries();
+normalizeScenarioSteps(industries);
 
 const industryListEl = document.getElementById("industryList");
 const personaListEl = document.getElementById("personaList");
@@ -13,11 +14,14 @@ const currentPromptEl = document.getElementById("currentPrompt");
 const answerOptionsEl = document.getElementById("answerOptions");
 const feedbackContentEl = document.getElementById("feedbackContent");
 const restartButton = document.getElementById("restartScenario");
+const progressLabelEl = document.getElementById("progressLabel");
+const progressFillEl = document.getElementById("progressFill");
 
 let currentIndustry = null;
 let currentPersona = null;
 let currentScenario = null;
-let stageIndex = 0;
+let currentStepIndex = 0;
+let totalSteps = 0;
 
 function init() {
   renderIndustryList();
@@ -45,7 +49,8 @@ function selectIndustry(industryId) {
   currentIndustry = industries.find((ind) => ind.id === industryId) || null;
   currentPersona = null;
   currentScenario = null;
-  stageIndex = 0;
+  currentStepIndex = 0;
+  totalSteps = 0;
   updateActiveButtons(industryListEl, industryId);
   renderIndustryDetails();
   renderPersonaList();
@@ -64,7 +69,7 @@ function renderIndustryDetails() {
   }
 
   const ideas = currentIndustry.questionIdeas
-    .map((idea) => `<li>${idea}</li>`)
+    .map((idea) => `<li>${ensureSentence(idea)}</li>`)
     .join("");
 
   industryDetailsEl.innerHTML = `
@@ -102,7 +107,8 @@ function selectPersona(personaId) {
   if (!currentIndustry) return;
   currentPersona = currentIndustry.personas.find((p) => p.id === personaId) || null;
   currentScenario = null;
-  stageIndex = 0;
+  currentStepIndex = 0;
+  totalSteps = 0;
   updateActiveButtons(personaListEl, personaId);
   renderPersonaDetails();
   renderRedPathCard();
@@ -117,12 +123,14 @@ function renderPersonaDetails() {
     return;
   }
 
-  const valueList = currentPersona.values.map((item) => `<li>${item}</li>`).join("");
+  const valueList = currentPersona.values
+    .map((item) => `<li>${ensureSentence(item)}</li>`)
+    .join("");
   const benefits = currentPersona.benefits
-    .map((item) => `<li>${item}</li>`)
+    .map((item) => `<li>${ensureSentence(item)}</li>`)
     .join("");
   const questionThemes = currentPersona.questionThemes
-    .map((item) => `<li>${item}</li>`)
+    .map((item) => `<li>${ensureSentence(item)}</li>`)
     .join("");
 
   personaDetailsEl.innerHTML = `
@@ -185,56 +193,64 @@ function selectScenario(scenarioId) {
   if (!currentPersona) return;
   currentScenario = currentPersona.scenarios.find((s) => s.id === scenarioId) || null;
   if (!currentScenario) return;
-  stageIndex = 0;
+  currentStepIndex = 0;
   updateActiveButtons(scenarioListEl, scenarioId);
   startScenario(currentScenario);
 }
 
 function startScenario(scenario) {
+  currentStepIndex = 0;
   scenarioTitleEl.textContent = scenario.title;
   scenarioDescriptionEl.textContent = scenario.description;
   restartButton.disabled = false;
   conversationLogEl.innerHTML = "";
   feedbackContentEl.innerHTML =
     '<p>Answer quality, context, and the recommended red path will appear here.</p>';
-  renderStage();
+  totalSteps = Array.isArray(scenario.steps) ? scenario.steps.length : 0;
+  refreshProgress(currentStepIndex, totalSteps);
+  renderCurrentStep();
 }
 
 function resetConversation() {
   conversationLogEl.innerHTML =
     '<p class="empty-state">No dialogue yet. Select a scenario to see the first dramatic question.</p>';
-  currentPromptEl.textContent = "Question: —";
+  currentPromptEl.innerHTML = "<strong>Question:</strong> —";
   answerOptionsEl.innerHTML = "";
   feedbackContentEl.innerHTML =
     '<p>Answer quality, context, and the recommended red path will appear here.</p>';
   restartButton.disabled = true;
+  refreshProgress(0, 0);
 }
 
-function renderStage() {
+function renderCurrentStep() {
   if (!currentScenario) return;
-  const stage = currentScenario.stages[stageIndex];
-  if (!stage) return;
+  const step = currentScenario.steps[currentStepIndex];
+  if (!step) {
+    concludeScenario();
+    return;
+  }
 
-  currentPromptEl.textContent = `Question: ${stage.question}`;
+  currentPromptEl.innerHTML = `<strong>Question:</strong> ${step.question}`;
   answerOptionsEl.innerHTML = "";
 
-  stage.answers.forEach((answer) => {
+  step.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.className = `answer-button ${getQualityClass(answer.quality)}`;
     button.innerHTML = `<span class="quality">${answer.quality}</span><span class="answer-copy">Answer: ${answer.statement}</span>`;
-    button.addEventListener("click", () => handleAnswer(stage, answer));
+    button.addEventListener("click", () => handleAnswer(step, answer));
     answerOptionsEl.appendChild(button);
   });
 }
 
-function handleAnswer(stage, answer) {
-  addConversationEntry(stage.stageType, stage.question, answer);
-  updateFeedback(answer, stage.stageType);
-  stageIndex += 1;
-  if (stageIndex >= currentScenario.stages.length) {
+function handleAnswer(step, answer) {
+  addConversationEntry(step.stageType, step.question, answer);
+  updateFeedback(answer, step.stageType);
+  currentStepIndex += 1;
+  refreshProgress(currentStepIndex, totalSteps);
+  if (currentStepIndex >= totalSteps) {
     concludeScenario();
   } else {
-    renderStage();
+    renderCurrentStep();
   }
 }
 
@@ -248,7 +264,7 @@ function addConversationEntry(stageType, question, answer) {
 
   const questionEl = document.createElement("p");
   questionEl.className = "question";
-  questionEl.textContent = `Question: ${question}`;
+  questionEl.innerHTML = `<strong>Question:</strong> ${question}`;
 
   const answerEl = document.createElement("p");
   answerEl.className = `answer ${getQualityClass(answer.quality)}`;
@@ -273,20 +289,26 @@ function updateFeedback(answer, stageType) {
 }
 
 function concludeScenario() {
-  currentPromptEl.textContent = "Question: The persona awaits your summary and PoC next steps.";
+  currentPromptEl.innerHTML =
+    "<strong>Question:</strong> The persona awaits your summary and PoC next steps.";
   answerOptionsEl.innerHTML = "";
   const evaluation = currentScenario.evaluation;
+  refreshProgress(totalSteps, totalSteps);
   feedbackContentEl.innerHTML = `
     <div class="feedback-card">
       <p><strong>Scenario complete.</strong></p>
-      <p>${evaluation.summary}</p>
+      <p>${ensureSentence(evaluation.summary)}</p>
       <div>
         <strong>Strengths to reinforce</strong>
-        <ul>${evaluation.strengths.map((item) => `<li>${item}</li>`).join("")}</ul>
+        <ul>${evaluation.strengths
+          .map((item) => `<li>${ensureSentence(item)}</li>`)
+          .join("")}</ul>
       </div>
       <div>
         <strong>Improve next time</strong>
-        <ul>${evaluation.improvements.map((item) => `<li>${item}</li>`).join("")}</ul>
+        <ul>${evaluation.improvements
+          .map((item) => `<li>${ensureSentence(item)}</li>`)
+          .join("")}</ul>
       </div>
     </div>
   `;
@@ -299,6 +321,22 @@ function updateActiveButtons(listEl, activeId) {
   });
 }
 
+function refreshProgress(completedSteps, stepsTotal) {
+  if (!progressFillEl || !progressLabelEl) return;
+  if (!stepsTotal) {
+    progressFillEl.style.width = "0%";
+    progressLabelEl.textContent = "Step 0 of 0";
+    return;
+  }
+
+  const clampedCompleted = Math.min(completedSteps, stepsTotal);
+  const percent = (clampedCompleted / stepsTotal) * 100;
+  progressFillEl.style.width = `${percent}%`;
+
+  const displayStep = clampedCompleted >= stepsTotal ? stepsTotal : clampedCompleted + 1;
+  progressLabelEl.textContent = `Step ${displayStep} of ${stepsTotal}`;
+}
+
 function getQualityClass(quality) {
   switch (quality) {
     case "Optimal":
@@ -308,6 +346,30 @@ function getQualityClass(quality) {
     default:
       return "quality-unfavorable";
   }
+}
+
+function ensureSentence(text) {
+  if (typeof text !== "string") return "";
+  const trimmed = text.trim();
+  if (!trimmed) return "";
+  const lastChar = trimmed.slice(-1);
+  if ([".", "?", "!"].includes(lastChar)) {
+    return trimmed;
+  }
+  return `${trimmed}.`;
+}
+
+function normalizeScenarioSteps(data) {
+  data.forEach((industry) => {
+    industry.personas.forEach((persona) => {
+      persona.scenarios.forEach((scenario) => {
+        if (!Array.isArray(scenario.steps) && Array.isArray(scenario.stages)) {
+          scenario.steps = scenario.stages;
+          delete scenario.stages;
+        }
+      });
+    });
+  });
 }
 
 function getIndustries() {

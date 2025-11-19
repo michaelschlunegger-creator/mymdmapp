@@ -4,30 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CODA MDM Sales Trainer</title>
-   <link rel="stylesheet" href="style.css?v=278" />
+    <link rel="stylesheet" href="style.css?v=2" />
   </head>
   <body>
     <div class="app-layout">
-  <aside class="selector-panel">
-   <header class="hero-card">
-  <img src="coda-logo.png" alt="CODA logo" class="hero-logo" />
-
-  <p class="eyebrow">CODA SALES STUDIO</p>
-  <h1>MDM Roleplay Coach</h1>
-  <p>
-    Pick an industry, choose the persona, and run staged roleplays that keep
-    the red-path toward a PoC in sight.
-  </p>
-</header>
- <p class="eyebrow">CODA Sales Studio</p>
+      <aside class="selector-panel">
+        <header class="hero-card">
+          <img src="logo.svg" alt="CODA logo" class="hero-logo" />
+          <p class="eyebrow">CODA Sales Studio</p>
           <h1>MDM Roleplay Coach</h1>
           <p>
-            Pick an industry, choose the persona, and run staged roleplays that keep the red-path toward a PoC in sight.
+            Follow the guided flow so every dialogue stays structured and keeps the red-path toward a PoC in sight.
           </p>
+          <ol class="flow-steps" aria-label="Roleplay flow">
+            <li><span>1</span>Choose the industry or vertical.</li>
+            <li><span>2</span>Select the persona or position.</li>
+            <li><span>3</span>Open the scenario situation and answer each probing step.</li>
+          </ol>
         </header>
- 
+
         <section class="selector-block">
-          <h2>Industries</h2>
+          <h2>Step 1 · Industry / Vertical</h2>
           <ul id="industryList" class="chip-list"></ul>
           <div id="industryDetails" class="industry-details">
             <p>Select an industry to see the story and hooks that land.</p>
@@ -35,14 +32,14 @@
         </section>
 
         <section class="selector-block">
-          <h2>Personas</h2>
+          <h2>Step 2 · Persona / Position</h2>
           <ul id="personaList" class="persona-list">
             <li class="placeholder">Pick an industry to unlock personas.</li>
           </ul>
         </section>
 
         <section class="selector-block">
-          <h2>Scenarios</h2>
+          <h2>Step 3 · Scenario / Situation</h2>
           <ul id="scenarioList" class="scenario-list">
             <li class="placeholder">Select a persona to unlock scenarios.</li>
           </ul>
@@ -64,12 +61,19 @@
             <button id="restartScenario" class="ghost-btn" disabled>Restart</button>
           </div>
 
+          <div class="progress-wrapper" aria-live="polite">
+            <p id="progressLabel" class="progress-label">Step 0 of 0</p>
+            <div class="progress-bar">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+
           <div id="conversationLog" class="conversation-log">
             <p class="empty-state">No dialogue yet. Select a scenario to see the first dramatic question.</p>
           </div>
 
           <div class="current-step">
-            <p id="currentPrompt" class="current-question">Question: —</p>
+            <p id="currentPrompt" class="current-question"><strong>Question:</strong> —</p>
             <div id="answerOptions" class="answer-options"></div>
           </div>
         </section>
