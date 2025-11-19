@@ -342,8 +342,8 @@ ul {
 }
 /* CODA logo – simple header placement */
 .logo-container {
-  padding-top: 12px;   /* distance from the top of the page */
-  padding-left: 80px;  /* from the left edge */
+  padding-top: 6px;   /* distance from the top of the page */
+  padding-left: 120px;  /* from the left edge */
 }
 /* Logo size */
 .coda-logo {
@@ -354,7 +354,7 @@ ul {
 
 /* FINAL OVERRIDE: force CODA logo to stay small */
 .hero-card .coda-logo {
-  height: 12px !important;
+  height: 24px !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
