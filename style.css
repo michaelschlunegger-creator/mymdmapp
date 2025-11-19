@@ -343,7 +343,7 @@ ul {
 /* CODA logo – simple header placement */
 .logo-container {
   padding-top: 12px;   /* distance from the top of the page */
-  padding-left: 20px;  /* from the left edge */
+  padding-left: 80px;  /* from the left edge */
 }
 /* Logo size */
 .coda-logo {
