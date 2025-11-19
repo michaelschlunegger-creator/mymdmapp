@@ -1,0 +1,246 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background-color: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--page, #f5f7fb);
+  color: inherit;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+}
+
+.sidebar h2 {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #cbd5f5;
+}
+
+.persona-list,
+.scenario-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.persona-list button,
+.scenario-list button {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 10px 12px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  color: inherit;
+  cursor: pointer;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.persona-list button:hover,
+.scenario-list button:hover,
+.persona-list button.active,
+.scenario-list button.active {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.main-panel {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: #fff;
+}
+
+.persona-brief {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.persona-brief ul {
+  padding-left: 18px;
+  line-height: 1.6;
+}
+
+.conversation-panel {
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 420px;
+}
+
+.scenario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.ghost-btn {
+  border: 1px solid #cbd5f5;
+  color: #0f172a;
+  background: transparent;
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.ghost-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.conversation-log {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px dashed #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.conversation-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.conversation-entry .question {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.conversation-entry .answer {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.answer-optimal {
+  background: rgba(16, 185, 129, 0.15);
+  color: #065f46;
+}
+
+.answer-medium {
+  background: rgba(251, 191, 36, 0.2);
+  color: #92400e;
+}
+
+.answer-unfavorable {
+  background: rgba(248, 113, 113, 0.2);
+  color: #7f1d1d;
+}
+
+.current-question {
+  font-weight: 600;
+}
+
+.answer-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.answer-button {
+  border: 1px solid #cbd5f5;
+  border-radius: 16px;
+  padding: 14px;
+  text-align: left;
+  background: #fff;
+  cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.answer-button strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.answer-button:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.feedback-panel {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feedback-panel h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  color: #bae6fd;
+}
+
+.feedback-card {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feedback-card ul {
+  padding-left: 18px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .feedback-panel {
+    order: 3;
+  }
+}
