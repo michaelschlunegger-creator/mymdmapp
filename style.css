@@ -340,8 +340,10 @@ ul {
     grid-template-columns: 1fr;
   }
 }
-.CODA LOGO {
-  height: 12px;       /* adjust size if too big/small */
-  margin: 8px;       /* space around the logo */
-  display: block;     /* ensures it sits nicely above the content */
+.coda-logo {
+  height: 32px !important;    /* Force this size */
+  margin-top: 20px !important; /* Push it down from the top */
+  margin-left: 12px;
+  display: block;
 }
+
