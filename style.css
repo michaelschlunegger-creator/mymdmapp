@@ -368,3 +368,23 @@ ul {
   width: auto;
   z-index: 10;
 }
+/* Position the CODA logo inside the hero card */
+.hero-card {
+  position: relative;
+}
+
+/* Final logo position + size */
+.hero-logo {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  height: 120px;   /* Change size here */
+  width: auto;
+  z-index: 10;
+}
+
+/* Completely disable old logo rules */
+.logo-container,
+.coda-logo {
+  display: none !important;
+}
