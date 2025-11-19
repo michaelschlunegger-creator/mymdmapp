@@ -2,6 +2,13 @@
 
 A fully deterministic, browser-based Master Data Management (MDM) sales training simulator. Practice pitching CODA's MDM platform against realistic executive and plant personas, learn how each answer lands, and receive coaching on how to advance the deal.
 
+## Training approach
+
+- Every persona includes a storyline, value focus, and a recommended question flow so reps know how to approach that vertical.
+- Each scenario begins with a dramatic open question from the sales rep that surfaces three likely persona answers labelled **Optimal**, **Medium**, or **Unfavorable** with contextual coaching.
+- Follow-up stages convert into closed questions that narrow scope, reinforce the red path toward a PoC, and conclude with an explicit PoC commitment ask.
+- The right rail surfaces real-time feedback (why the answer mattered, what the persona is thinking, and the next step on the red path) plus an end-of-session evaluation.
+
 ## Project structure
 
 ```

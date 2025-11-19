@@ -9,51 +9,55 @@
   <body>
     <div class="app-shell">
       <aside class="sidebar">
-        <header>
+        <header class="app-header">
           <h1>CODA MDM Trainer</h1>
-          <p>Practice persona-driven MDM sales conversations.</p>
+          <p>Deterministic persona practice for PoC-focused conversations.</p>
         </header>
+
         <section>
           <h2>Personas</h2>
           <ul id="personaList" class="persona-list"></ul>
         </section>
-        <section id="scenarioSection">
+
+        <section>
           <h2>Scenarios</h2>
           <ul id="scenarioList" class="scenario-list"></ul>
         </section>
       </aside>
 
       <main class="main-panel">
-        <section class="persona-details" id="personaDetails">
-          <h2>Choose a persona to begin</h2>
-          <p>Select a persona on the left to view their storyline, pain points, and training scenarios.</p>
+        <section class="persona-brief" id="personaDetails">
+          <h2>Select a persona to begin</h2>
+          <p>The left sidebar lists available personas. Choose one to see their storyline, value focus, and ideal strategy.</p>
         </section>
 
         <section class="conversation-panel">
-          <div class="conversation-header">
+          <div class="scenario-header">
             <div>
               <h3 id="scenarioTitle">Scenario</h3>
               <p id="scenarioDescription">Pick a scenario to start the interactive roleplay.</p>
             </div>
-            <button id="restartScenario" class="ghost-btn" disabled>Restart scenario</button>
+            <button id="restartScenario" class="ghost-btn" disabled>Restart</button>
           </div>
+
           <div id="conversationLog" class="conversation-log">
-            <p class="empty-state">No conversation yet. Select a scenario to see the persona speak.</p>
+            <p class="empty-state">No dialogue yet. Select a scenario to see the first dramatic question.</p>
           </div>
+
           <div class="current-step">
-            <p id="currentPrompt" class="persona-line">—</p>
+            <p id="currentPrompt" class="current-question">Question: —</p>
             <div id="answerOptions" class="answer-options"></div>
           </div>
         </section>
       </main>
-    </div>
 
-    <section class="feedback-panel" id="feedbackPanel">
-      <h3>Real-time Coaching</h3>
-      <div id="feedbackContent">
-        <p>Responses, deal impact, and next steps will appear here.</p>
-      </div>
-    </section>
+      <section class="feedback-panel" id="feedbackPanel">
+        <h2>Real-time Coaching</h2>
+        <div id="feedbackContent">
+          <p>Answer quality, context, and the recommended red path will appear here.</p>
+        </div>
+      </section>
+    </div>
 
     <script src="script.js"></script>
   </body>
