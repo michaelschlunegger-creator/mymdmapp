@@ -2720,6 +2720,8 @@ const personaDetailsEl = document.getElementById("personaDetails");
 const redPathCardEl = document.getElementById("redPathCard");
 const scenarioTitleEl = document.getElementById("scenarioTitle");
 const scenarioDescriptionEl = document.getElementById("scenarioDescription");
+const scenarioCompanyEl = document.getElementById("scenarioCompany");
+const scenarioAvatarEl = document.getElementById("scenarioAvatar");
 const conversationLogEl = document.getElementById("conversationLog");
 const currentPromptEl = document.getElementById("currentPrompt");
 const answerOptionsEl = document.getElementById("answerOptions");
@@ -2761,9 +2763,29 @@ function personaDisplayName(persona) {
 }
 let displayedQuestionText = "";
 
+function hydratePersonas() {
+  verticals.forEach((industry) => {
+    (industry.personas || []).forEach((persona) => {
+      const profile = personaProfiles[persona.id];
+      if (profile) {
+        persona.personName = profile.personName || persona.personName;
+        persona.company = profile.company || persona.company;
+        persona.avatar = profile.avatar || persona.avatar;
+        persona.bio = profile.bio || persona.bio;
+      }
+    });
+  });
+}
+
+function personaDisplayName(persona) {
+  return persona?.personName || persona?.name || "Selected contact";
+}
+let displayedQuestionText = "";
+
 function init() {
   renderLibraryMetrics();
   renderContextBadges();
+  renderScenarioIdentity();
   renderIndustryList();
   restartButton.addEventListener("click", () => {
     if (currentPersona) {
@@ -2821,6 +2843,37 @@ function renderContextBadges() {
   `;
 }
 
+function renderScenarioIdentity() {
+  const displayName = currentPersona ? personaDisplayName(currentPersona) : null;
+  if (scenarioTitleEl) {
+    scenarioTitleEl.textContent = displayName
+      ? `${displayName} Roleplay`
+      : "Choose a persona to begin";
+  }
+
+  if (scenarioDescriptionEl) {
+    scenarioDescriptionEl.textContent =
+      currentPersona?.shortDescription || "The dramatic opening question will appear here.";
+  }
+
+  if (scenarioCompanyEl) {
+    scenarioCompanyEl.textContent =
+      currentPersona?.company || "Select a persona to see their company and context.";
+  }
+
+  if (scenarioAvatarEl) {
+    if (currentPersona?.avatar) {
+      scenarioAvatarEl.innerHTML = `<img src="${currentPersona.avatar}" alt="${displayName || "persona"} avatar" loading="lazy" />`;
+      scenarioAvatarEl.classList.remove("placeholder-avatar");
+    } else {
+      const letter = displayName ? displayName.slice(0, 1) : "–";
+      scenarioAvatarEl.textContent = letter;
+      scenarioAvatarEl.classList.add("placeholder-avatar");
+      scenarioAvatarEl.innerHTML = letter;
+    }
+  }
+}
+
 function renderIndustryList() {
   industryListEl.innerHTML = "";
   verticals.forEach((industry) => {
@@ -2850,6 +2903,7 @@ function selectIndustry(industryId) {
   redPathCardEl.innerHTML =
     '<h2>Red-path Strategy</h2><p>Persona-specific cues will appear after you select someone.</p>';
   renderContextBadges();
+  renderScenarioIdentity();
 }
 
 function renderIndustryDetails() {
@@ -2878,13 +2932,21 @@ function renderPersonaList() {
     const li = document.createElement("li");
     const button = document.createElement("button");
     const displayName = personaDisplayName(persona);
+    const avatarMarkup = persona.avatar
+      ? `<span class="persona-button-avatar"><img src="${persona.avatar}" alt="${displayName} avatar" loading="lazy" /></span>`
+      : `<span class="persona-button-avatar placeholder-avatar">${displayName.slice(0, 1)}</span>`;
     const companyLine = persona.company
       ? `<span class="persona-button-meta">${persona.company}</span>`
       : "";
     button.innerHTML = `
-      <span class="persona-button-title">${displayName}</span>
-      <span class="persona-button-subtitle">${persona.name} · ${persona.role}</span>
-      ${companyLine}
+      <div class="persona-button-head">
+        ${avatarMarkup}
+        <div>
+          <span class="persona-button-title">${displayName}</span>
+          <span class="persona-button-subtitle">${persona.name} · ${persona.role}</span>
+          ${companyLine}
+        </div>
+      </div>
     `;
     button.dataset.id = persona.id;
     button.addEventListener("click", () => selectPersona(persona.id));
@@ -2909,6 +2971,7 @@ function selectPersona(personaId) {
     startInstructionsEl.textContent = "Ready when you are. Start the roleplay.";
   }
   renderContextBadges();
+  renderScenarioIdentity();
 }
 
 function renderPersonaDetails() {
@@ -2983,8 +3046,7 @@ function startRoleplay() {
   currentQuestionIndex = 0;
   totalQuestions = currentPersona.questions.length;
   displayedQuestionText = "";
-  scenarioTitleEl.textContent = `${personaDisplayName(currentPersona)} Roleplay`;
-  scenarioDescriptionEl.textContent = currentPersona.shortDescription;
+  renderScenarioIdentity();
   restartButton.disabled = false;
   conversationLogEl.innerHTML = "";
   feedbackContentEl.innerHTML =
