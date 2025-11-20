@@ -16,6 +16,20 @@
           <p>
             Follow the guided flow so every dialogue stays structured and keeps the red-path toward a PoC in sight.
           </p>
+          <div class="metrics-row" aria-label="Training library stats">
+            <div class="metric">
+              <p class="eyebrow">Industries</p>
+              <p id="metricIndustries" class="metric-value">—</p>
+            </div>
+            <div class="metric">
+              <p class="eyebrow">Personas</p>
+              <p id="metricPersonas" class="metric-value">—</p>
+            </div>
+            <div class="metric">
+              <p class="eyebrow">Questions</p>
+              <p id="metricQuestions" class="metric-value">—</p>
+            </div>
+          </div>
           <ol class="flow-steps" aria-label="Roleplay flow">
             <li><span>1</span>Choose the industry or vertical.</li>
             <li><span>2</span>Select the persona or position.</li>
@@ -48,7 +62,8 @@
       </aside>
 
       <main class="content-panel">
-        <section id="personaDetails" class="persona-brief">
+        <section id="personaDetails" class="persona-brief" aria-live="polite">
+          <h2>Persona briefing</h2>
           <p>Select a persona to view the storyline, value focus, and the best probing path.</p>
         </section>
 
@@ -69,9 +84,13 @@
             </div>
           </div>
 
-            <div id="conversationLog" class="conversation-log">
-              <p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>
-            </div>
+          <div id="contextBadges" class="context-badges" aria-live="polite">
+            <span class="badge">No persona selected yet.</span>
+          </div>
+
+          <div id="conversationLog" class="conversation-log">
+            <p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>
+          </div>
 
           <div class="current-step">
             <p id="currentPrompt" class="current-question"><strong>Question:</strong> —</p>
