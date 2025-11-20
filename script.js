@@ -2209,6 +2209,13 @@ const verticals = [
           },
         ],
       },
+    ],
+  },
+  {
+    id: "financialServices",
+    name: "Financial Services",
+    description: "Banks, insurers, and fintechs balancing growth, risk, and regulatory control.",
+    personas: [
       {
         id: "fsRisk",
         name: "Risk & Compliance Officer",
@@ -2493,6 +2500,219 @@ const verticals = [
   },
 ];
 
+const personaProfiles = {
+  ceoCfo: {
+    personName: "Ava Patel",
+    company: "NorthBridge Energy — Houston",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=AvaPatel&backgroundColor=131a2a&radius=50",
+    bio: "Ava is a former private equity operator turned CFO who thrives on unlocking cash from complex assets and coaching new finance talent on disciplined decision-making.",
+  },
+  financeCfo: {
+    personName: "Daniel Brooks",
+    company: "Seawell Petroleum — Calgary",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=DanielBrooks&backgroundColor=0b1626&radius=50",
+    bio: "Daniel grew up in field accounting and now balances audit rigor with fast-moving capital programs across upstream and downstream portfolios.",
+  },
+  cioHeadIt: {
+    personName: "Monica Reyes",
+    company: "Equinox Refining — Denver",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MonicaReyes&backgroundColor=0f1b2d&radius=50",
+    bio: "Monica modernized her firm's SAP and Maximo landscape and is passionate about integrations that keep reliability teams confident and efficient.",
+  },
+  opsMaintenanceHead: {
+    personName: "Greg Sanders",
+    company: "Midstream Reliability Corp — Tulsa",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=GregSanders&backgroundColor=0a1729&radius=50",
+    bio: "Greg started as a rotating equipment supervisor and now leads maintenance excellence programs focused on first-time-right execution and crew safety.",
+  },
+  plantManager: {
+    personName: "Luis Fernandez",
+    company: "PetroCore Refining — Baton Rouge",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=LuisFernandez&backgroundColor=0f1825&radius=50",
+    bio: "Luis runs a high-throughput site with a calm, coaching style that keeps shift teams aligned on uptime and safe work practices.",
+  },
+  engineeringHead: {
+    personName: "Priya Natarajan",
+    company: "Helios Energy Assets — Dubai",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=PriyaNatarajan&backgroundColor=111a29&radius=50",
+    bio: "Priya is an asset integrity leader who obsesses over clean BOMs and loves showing engineers how great data prevents repeat failures.",
+  },
+  inventoryController: {
+    personName: "Clara Jensen",
+    company: "Bayfront Terminals — Stavanger",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ClaraJensen&backgroundColor=0b1422&radius=50",
+    bio: "Clara rose from storeroom clerk to controller and teaches crews how disciplined data keeps audits painless and bays organized.",
+  },
+  procurementHead: {
+    personName: "Ethan Wu",
+    company: "Arclight Energy Supply — Singapore",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=EthanWu&backgroundColor=0e1726&radius=50",
+    bio: "Ethan leads strategic sourcing across APAC and relishes using normalized specs to negotiate boldly with tier-one suppliers.",
+  },
+  categoryManager: {
+    personName: "Sophie Martin",
+    company: "Crestwave Resources — Perth",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=SophieMartin&backgroundColor=0a1423&radius=50",
+    bio: "Sophie manages rotating equipment categories and cares deeply about price fairness across sites and transparent supplier partnerships.",
+  },
+  digitalLead: {
+    personName: "Noah Kim",
+    company: "Vertex Energy Digital — Seoul",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=NoahKim&backgroundColor=0c1524&radius=50",
+    bio: "Noah pairs IoT pilots with change management coaching so frontline teams actually adopt the analytics he delivers.",
+  },
+  utilityExec: {
+    personName: "Jamal Harris",
+    company: "Gridwise Utilities — Atlanta",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=JamalHarris&backgroundColor=0a1724&radius=50",
+    bio: "Jamal oversees generation and distribution portfolios and mentors rising leaders on reliability-first modernization.",
+  },
+  gridOps: {
+    personName: "Emily Zhao",
+    company: "Skyline Electric — Seattle",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=EmilyZhao&backgroundColor=0d1a2b&radius=50",
+    bio: "Emily is a dispatch champion who loves translating asset data into grid resilience stories her crews can rally behind.",
+  },
+  supplyLead: {
+    personName: "Marcus Doyle",
+    company: "Riverbend Power Supply — Denver",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MarcusDoyle&backgroundColor=0e1c30&radius=50",
+    bio: "Marcus keeps storm response kits ready and believes standardized specs are the secret to faster restoration.",
+  },
+  assetEngineer: {
+    personName: "Sara Alvarez",
+    company: "Brightline Grid Assets — Dallas",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=SaraAlvarez&backgroundColor=0a1624&radius=50",
+    bio: "Sara works on substation modernization and teaches young engineers how data quality underpins every safety case.",
+  },
+  digitalUtility: {
+    personName: "Owen Clarke",
+    company: "Lumina Utilities Labs — Boston",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=OwenClarke&backgroundColor=0c1727&radius=50",
+    bio: "Owen connects AMI analytics with field workflows, focusing on adoption so data science wins reach linemen and planners.",
+  },
+  mfgExec: {
+    personName: "Helena Strauss",
+    company: "Atlas Components — Detroit",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=HelenaStrauss&backgroundColor=0c1a2b&radius=50",
+    bio: "Helena guides plant portfolios through lean transformations and keeps finance stakeholders aligned on quality-led savings.",
+  },
+  mfgPlant: {
+    personName: "Andre Baptiste",
+    company: "Silverline Manufacturing — Charlotte",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=AndreBaptiste&backgroundColor=0b1627&radius=50",
+    bio: "Andre leads a high-mix plant, known for walking the floor daily and coaching teams on standard work and accurate parts data.",
+  },
+  mfgProcurement: {
+    personName: "Madison Lee",
+    company: "Nova Industrial Supply — Chicago",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MadisonLee&backgroundColor=0e1b2d&radius=50",
+    bio: "Madison blends sourcing savvy with engineering curiosity, building negotiation packs that hinge on clean specs and vendor trust.",
+  },
+  mfgQuality: {
+    personName: "Rajiv Menon",
+    company: "PrecisionWorks — Pune",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=RajivMenon&backgroundColor=0a1523&radius=50",
+    bio: "Rajiv is a quality veteran who mentors inspectors on why master data consistency keeps defects and recalls at bay.",
+  },
+  mfgDigital: {
+    personName: "Camila Costa",
+    company: "Aurora Smart Factory Lab — São Paulo",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=CamilaCosta&backgroundColor=0e1b2c&radius=50",
+    bio: "Camila runs digital pilots on the shop floor and translates technical wins into operator-friendly workflows.",
+  },
+  hcCdo: {
+    personName: "Dr. Lila Morgan",
+    company: "Harborview Health System — Boston",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=LilaMorgan&backgroundColor=0f1827&radius=50",
+    bio: "Lila is a clinician turned data officer who champions patient safety through trustworthy device and supply records.",
+  },
+  hcSupply: {
+    personName: "Ben Torres",
+    company: "CuraMed Supply Network — Dallas",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=BenTorres&backgroundColor=0b1626&radius=50",
+    bio: "Ben runs perioperative supply chains and mentors buyers on how clean catalogs prevent costly substitutions mid-case.",
+  },
+  hcClinicalEng: {
+    personName: "Mei Chen",
+    company: "Unity Biomedical Engineering — San Francisco",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MeiChen&backgroundColor=0c1728&radius=50",
+    bio: "Mei keeps device inventories compliant and loves explaining to new techs how accurate masters reduce downtime for clinicians.",
+  },
+  hcQuality: {
+    personName: "Grace Patel",
+    company: "Northstar Health Quality — Minneapolis",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=GracePatel&backgroundColor=0d1a2d&radius=50",
+    bio: "Grace leads accreditation prep and turns data quality stories into relatable patient-safety narratives for frontline teams.",
+  },
+  hcDigital: {
+    personName: "Jordan Rivers",
+    company: "CareForward Digital — New York",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=JordanRivers&backgroundColor=0c1727&radius=50",
+    bio: "Jordan pairs EHR optimization with bedside adoption coaching so clinicians actually use the tools delivered.",
+  },
+  retailCoo: {
+    personName: "Natalie Greene",
+    company: "Lumen Retail Group — Chicago",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=NatalieGreene&backgroundColor=0a1726&radius=50",
+    bio: "Natalie oversees multi-banner operations and teaches store leaders how consistent data fuels great customer experiences.",
+  },
+  retailSupply: {
+    personName: "Omar Rahman",
+    company: "BrightCart Supply Chain — Dallas",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=OmarRahman&backgroundColor=0f1b2f&radius=50",
+    bio: "Omar keeps fulfillment centers humming and mentors planners on using standardized items to prevent costly substitutions.",
+  },
+  retailEcom: {
+    personName: "Chloe Summers",
+    company: "Northlane eCommerce — Toronto",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ChloeSummers&backgroundColor=0c1625&radius=50",
+    bio: "Chloe is a digital merchandiser who believes clean product data is the fastest path to higher conversion and fewer returns.",
+  },
+  retailInventory: {
+    personName: "Hannah Park",
+    company: "Evergreen Markets — Portland",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=HannahPark&backgroundColor=0b1627&radius=50",
+    bio: "Hannah learned inventory the hard way during holiday peaks and now trains teams on shrink control through data discipline.",
+  },
+  retailGovernance: {
+    personName: "Victor Salazar",
+    company: "Summit Retail Governance — Miami",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=VictorSalazar&backgroundColor=0d1a2d&radius=50",
+    bio: "Victor builds policy playbooks and loves demystifying compliance for marketers and merchandisers alike.",
+  },
+  fsCdo: {
+    personName: "Isabella Romano",
+    company: "Pinnacle Bank Group — New York",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=IsabellaRomano&backgroundColor=0a1523&radius=50",
+    bio: "Isabella is a data leader who pairs governance with storytelling so bankers see how quality data protects clients.",
+  },
+  fsRisk: {
+    personName: "Marcus Flynn",
+    company: "Harborstone Financial — London",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=MarcusFlynn&backgroundColor=0f1c31&radius=50",
+    bio: "Marcus rose through credit risk and now coaches analysts on how clean reference data keeps models trustworthy.",
+  },
+  fsOps: {
+    personName: "Elaine Porter",
+    company: "Silvergate Capital Operations — Toronto",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=ElainePorter&backgroundColor=0d192a&radius=50",
+    bio: "Elaine modernizes payment operations and mentors teams on reducing exceptions through precise master data.",
+  },
+  fsTreasury: {
+    personName: "Julian Becker",
+    company: "Auric Treasury Partners — Frankfurt",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=JulianBecker&backgroundColor=0c1829&radius=50",
+    bio: "Julian is a treasury strategist who links liquidity decisions to data reliability and loves teaching why it matters.",
+  },
+  fsDigital: {
+    personName: "Tariq Ahmed",
+    company: "NextWave Fintech Lab — Dubai",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=TariqAhmed&backgroundColor=0a1522&radius=50",
+    bio: "Tariq delivers digital products across regions and focuses on making data quality tangible for product managers and engineers.",
+  },
+};
+
 const industryListEl = document.getElementById("industryList");
 const personaListEl = document.getElementById("personaList");
 const industryDetailsEl = document.getElementById("industryDetails");
@@ -2514,10 +2734,31 @@ const metricPersonasEl = document.getElementById("metricPersonas");
 const metricQuestionsEl = document.getElementById("metricQuestions");
 const contextBadgesEl = document.getElementById("contextBadges");
 
+hydratePersonas();
+
 let currentIndustry = null;
 let currentPersona = null;
 let currentQuestionIndex = 0;
 let totalQuestions = 0;
+let displayedQuestionText = "";
+
+function hydratePersonas() {
+  verticals.forEach((industry) => {
+    (industry.personas || []).forEach((persona) => {
+      const profile = personaProfiles[persona.id];
+      if (profile) {
+        persona.personName = profile.personName || persona.personName;
+        persona.company = profile.company || persona.company;
+        persona.avatar = profile.avatar || persona.avatar;
+        persona.bio = profile.bio || persona.bio;
+      }
+    });
+  });
+}
+
+function personaDisplayName(persona) {
+  return persona?.personName || persona?.name || "Selected contact";
+}
 let displayedQuestionText = "";
 
 function init() {
@@ -2561,15 +2802,20 @@ function renderContextBadges() {
     return;
   }
 
-  const focusSummary = (currentPersona.focusAreas || []).slice(0, 2).join(" · ") ||
+  const focusSummary =
+    (currentPersona.focusAreas || []).slice(0, 2).join(" · ") ||
     "Reliable data and disciplined cash";
   const redPathSummary = ensureSentence(
     currentPersona.redPath || "Guide the dialogue toward an evidence-backed PoC"
   );
+  const contactName = personaDisplayName(currentPersona);
+  const companyLabel = currentPersona.company || "Company context coming soon";
 
   contextBadgesEl.innerHTML = `
     <span class="badge"><strong>Industry</strong> ${currentIndustry.name}</span>
+    <span class="badge"><strong>Contact</strong> ${contactName}</span>
     <span class="badge"><strong>Persona</strong> ${currentPersona.name}</span>
+    <span class="badge"><strong>Company</strong> ${companyLabel}</span>
     <span class="badge"><strong>Focus</strong> ${focusSummary}</span>
     <span class="badge"><strong>Red-path</strong> ${redPathSummary}</span>
   `;
@@ -2631,7 +2877,15 @@ function renderPersonaList() {
   currentIndustry.personas.forEach((persona) => {
     const li = document.createElement("li");
     const button = document.createElement("button");
-    button.textContent = `${persona.name} · ${persona.role}`;
+    const displayName = personaDisplayName(persona);
+    const companyLine = persona.company
+      ? `<span class="persona-button-meta">${persona.company}</span>`
+      : "";
+    button.innerHTML = `
+      <span class="persona-button-title">${displayName}</span>
+      <span class="persona-button-subtitle">${persona.name} · ${persona.role}</span>
+      ${companyLine}
+    `;
     button.dataset.id = persona.id;
     button.addEventListener("click", () => selectPersona(persona.id));
     li.appendChild(button);
@@ -2677,16 +2931,30 @@ function renderPersonaDetails() {
     ? `<div class="focus-areas"><p><strong>Focus the roleplay on:</strong></p><ul>${focusList}</ul></div>`
     : '<p><strong>Focus the roleplay on:</strong> reliable data, cash discipline, and confident decisions.</p>';
 
+  const displayName = personaDisplayName(currentPersona);
+  const avatarMarkup = currentPersona.avatar
+    ? `<img src="${currentPersona.avatar}" alt="${displayName} avatar" class="persona-avatar" loading="lazy" />`
+    : `<div class="persona-avatar placeholder-avatar">${displayName.slice(0, 1)}</div>`;
+  const companyLine = currentPersona.company
+    ? `<p class="persona-company">${currentPersona.company}</p>`
+    : "";
+  const bioCopy = currentPersona.bio || currentPersona.shortDescription;
+
   personaDetailsEl.innerHTML = `
     <div class="persona-header">
-      <div>
-        <h2>Persona briefing</h2>
-        <p class="persona-name">${currentPersona.name}</p>
-        <p class="persona-role">${currentPersona.role}</p>
+      <div class="persona-identity">
+        ${avatarMarkup}
+        <div>
+          <h2>Persona briefing</h2>
+          <p class="persona-name">${displayName}</p>
+          <p class="persona-role">${currentPersona.role}</p>
+          ${companyLine}
+          <p class="persona-handle">${currentPersona.name} persona</p>
+        </div>
       </div>
       ${badgeList ? `<ul class="pill-list">${badgeList}</ul>` : ""}
     </div>
-    <p>${currentPersona.shortDescription}</p>
+    <p class="persona-bio">${bioCopy}</p>
     ${focusBlock}
   `;
 }
@@ -2715,7 +2983,7 @@ function startRoleplay() {
   currentQuestionIndex = 0;
   totalQuestions = currentPersona.questions.length;
   displayedQuestionText = "";
-  scenarioTitleEl.textContent = `${currentPersona.name} Roleplay`;
+  scenarioTitleEl.textContent = `${personaDisplayName(currentPersona)} Roleplay`;
   scenarioDescriptionEl.textContent = currentPersona.shortDescription;
   restartButton.disabled = false;
   conversationLogEl.innerHTML = "";
