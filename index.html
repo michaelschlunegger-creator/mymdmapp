@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CODA MDM Sales Trainer</title>
-    <link rel="stylesheet" href="style.css?v=243" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css?v=245" />
   </head>
   <body>
     <div class="app-layout">
@@ -16,6 +20,20 @@
           <p>
             Follow the guided flow so every dialogue stays structured and keeps the red-path toward a PoC in sight.
           </p>
+          <div class="metrics-row" aria-label="Training library stats">
+            <div class="metric">
+              <p class="eyebrow">Industries</p>
+              <p id="metricIndustries" class="metric-value">—</p>
+            </div>
+            <div class="metric">
+              <p class="eyebrow">Personas</p>
+              <p id="metricPersonas" class="metric-value">—</p>
+            </div>
+            <div class="metric">
+              <p class="eyebrow">Questions</p>
+              <p id="metricQuestions" class="metric-value">—</p>
+            </div>
+          </div>
           <ol class="flow-steps" aria-label="Roleplay flow">
             <li><span>1</span>Choose the industry or vertical.</li>
             <li><span>2</span>Select the persona or position.</li>
@@ -48,16 +66,21 @@
       </aside>
 
       <main class="content-panel">
-        <section id="personaDetails" class="persona-brief">
+        <section id="personaDetails" class="persona-brief" aria-live="polite">
+          <h2>Persona briefing</h2>
           <p>Select a persona to view the storyline, value focus, and the best probing path.</p>
         </section>
 
         <section class="conversation-panel">
           <div class="scenario-header">
-            <div>
-              <p class="eyebrow">Scenario</p>
-              <h3 id="scenarioTitle">Choose a persona to begin</h3>
-              <p id="scenarioDescription">The dramatic opening question will appear here.</p>
+            <div class="scenario-identity">
+              <div id="scenarioAvatar" class="scenario-avatar placeholder-avatar">–</div>
+              <div>
+                <p class="eyebrow">Scenario</p>
+                <h3 id="scenarioTitle">Choose a persona to begin</h3>
+                <p id="scenarioDescription">The dramatic opening question will appear here.</p>
+                <p id="scenarioCompany" class="scenario-meta">Select a persona to see their company and context.</p>
+              </div>
             </div>
             <button id="restartScenario" class="ghost-btn" disabled>Restart</button>
           </div>
@@ -69,9 +92,13 @@
             </div>
           </div>
 
-            <div id="conversationLog" class="conversation-log">
-              <p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>
-            </div>
+          <div id="contextBadges" class="context-badges" aria-live="polite">
+            <span class="badge">No persona selected yet.</span>
+          </div>
+
+          <div id="conversationLog" class="conversation-log">
+            <p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>
+          </div>
 
           <div class="current-step">
             <p id="currentPrompt" class="current-question"><strong>Question:</strong> —</p>
