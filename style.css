@@ -223,6 +223,24 @@ ul {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 12px 26px rgba(0, 0, 0, 0.25);
 }
 
+.persona-button-title {
+  font-weight: 700;
+  color: #e8ecff;
+  display: block;
+}
+
+.persona-button-subtitle {
+  font-size: 0.9rem;
+  color: #a8b9d6;
+  display: block;
+}
+
+.persona-button-meta {
+  font-size: 0.85rem;
+  color: #8ea0bf;
+  display: block;
+}
+
 .start-section {
   display: flex;
   flex-direction: column;
@@ -304,6 +322,31 @@ ul {
   align-items: flex-start;
 }
 
+.persona-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.persona-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  object-fit: cover;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  padding: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.placeholder-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #cbd7f0;
+  font-weight: 700;
+  background: #0c1220;
+}
+
 .persona-name {
   font-size: 1.25rem;
   font-weight: 800;
@@ -342,6 +385,22 @@ ul {
 .persona-role {
   color: #c4ccde;
   margin-bottom: 8px;
+}
+
+.persona-company {
+  color: #9fb5d8;
+  margin-top: 2px;
+}
+
+.persona-handle {
+  color: #8291ac;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.persona-bio {
+  margin-top: 8px;
+  line-height: 1.65;
 }
 
 .conversation-panel {
