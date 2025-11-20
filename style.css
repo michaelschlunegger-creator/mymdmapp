@@ -61,6 +61,26 @@ ul {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 6px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.metric-value {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 .hero-logo {
   position: absolute;
   top: 18px;
@@ -147,6 +167,39 @@ ul {
   transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
+.start-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  background: linear-gradient(120deg, #0a84ff, #30d158);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(10, 132, 255, 0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.primary-btn:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(10, 132, 255, 0.28);
+}
+
 .chip-list button:hover,
 .persona-list button:hover,
 .scenario-list button:hover,
@@ -176,6 +229,39 @@ ul {
 
 .persona-brief h2 {
   margin-bottom: 8px;
+}
+
+.persona-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.persona-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 4px 0;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+  padding: 0;
+  list-style: none;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2fb;
+  border: 1px solid rgba(12, 18, 32, 0.08);
+  font-size: 0.85rem;
+  color: #3a4052;
 }
 
 .persona-brief .grid-two {
@@ -242,6 +328,31 @@ ul {
   border-radius: inherit;
   background: linear-gradient(90deg, #0a84ff, #30d158);
   transition: width 0.2s ease;
+}
+
+.context-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -6px;
+  margin-bottom: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #eef2fb;
+  border: 1px solid rgba(12, 18, 32, 0.08);
+  font-size: 0.9rem;
+  color: #3a4052;
+  box-shadow: 0 6px 16px rgba(12, 18, 32, 0.06);
+}
+
+.badge strong {
+  color: #0a84ff;
 }
 
 .conversation-log {
@@ -390,6 +501,15 @@ ul {
   .conversation-panel,
   .coaching-panel section {
     padding: 18px;
+  }
+
+  .persona-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metrics-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .conversation-log {
