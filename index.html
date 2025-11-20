@@ -19,7 +19,7 @@
           <ol class="flow-steps" aria-label="Roleplay flow">
             <li><span>1</span>Choose the industry or vertical.</li>
             <li><span>2</span>Select the persona or position.</li>
-            <li><span>3</span>Open the scenario situation and answer each probing step.</li>
+            <li><span>3</span>Start the roleplay and answer the persona's questions.</li>
           </ol>
         </header>
 
@@ -39,10 +39,11 @@
         </section>
 
         <section class="selector-block">
-          <h2>Step 3 · Scenario / Situation</h2>
-          <ul id="scenarioList" class="scenario-list">
-            <li class="placeholder">Select a persona to unlock scenarios.</li>
-          </ul>
+          <h2>Step 3 · Start Roleplay</h2>
+          <div id="startSection" class="start-section">
+            <p id="startInstructions">Select a persona to unlock the roleplay.</p>
+            <button id="startTraining" class="primary-btn" disabled>Start Roleplay</button>
+          </div>
         </section>
       </aside>
 
@@ -55,7 +56,7 @@
           <div class="scenario-header">
             <div>
               <p class="eyebrow">Scenario</p>
-              <h3 id="scenarioTitle">Choose a scenario to begin</h3>
+              <h3 id="scenarioTitle">Choose a persona to begin</h3>
               <p id="scenarioDescription">The dramatic opening question will appear here.</p>
             </div>
             <button id="restartScenario" class="ghost-btn" disabled>Restart</button>
@@ -68,9 +69,9 @@
             </div>
           </div>
 
-          <div id="conversationLog" class="conversation-log">
-            <p class="empty-state">No dialogue yet. Select a scenario to see the first dramatic question.</p>
-          </div>
+            <div id="conversationLog" class="conversation-log">
+              <p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>
+            </div>
 
           <div class="current-step">
             <p id="currentPrompt" class="current-question"><strong>Question:</strong> —</p>
