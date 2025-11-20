@@ -2209,6 +2209,13 @@ const verticals = [
           },
         ],
       },
+    ],
+  },
+  {
+    id: "financialServices",
+    name: "Financial Services",
+    description: "Banks, insurers, and fintechs balancing growth, risk, and regulatory control.",
+    personas: [
       {
         id: "fsRisk",
         name: "Risk & Compliance Officer",
@@ -2733,6 +2740,7 @@ let currentIndustry = null;
 let currentPersona = null;
 let currentQuestionIndex = 0;
 let totalQuestions = 0;
+let displayedQuestionText = "";
 
 function hydratePersonas() {
   verticals.forEach((industry) => {
