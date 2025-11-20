@@ -1418,142 +1418,1073 @@ const verticals = [
           },
         ],
       },
+    ],
+  },
+  {
+    id: "healthcare",
+    name: "Healthcare & Life Sciences",
+    description: "Hospital networks, labs, and device makers where accuracy and compliance are critical.",
+    personas: [
       {
-        id: "categoryManager",
-        name: "Category Manager / Strategic Sourcing",
-        role: "Owns category strategy, supplier rationalization, and savings targets.",
+        id: "hcCdo",
+        name: "Chief Data Officer / CMIO",
+        role: "Owns data quality, interoperability, and clinical decision support readiness.",
         shortDescription:
-          "Wants harmonized supplier and material data so price comparisons are fair and savings are defensible.",
+          "Needs standardized masters so EHR, ERP, and clinical systems agree, avoiding safety and reporting risk.",
         focusAreas: [
-          "Price variance across sites for identical items",
-          "Centralized supplier and material standards",
-          "Proof points for savings and negotiations",
+          "Interoperability across EHR, ERP, and lab systems",
+          "Data quality for safety and compliance",
+          "Evidence for funding digital programs",
         ],
         redPath:
-          "Uncover fragmented supplier pricing, then use CODA to normalize specs and expose consolidation opportunities.",
+          "Link clean masters to patient safety, report accuracy, and evidence for digital health programs; propose a governed pilot on a high-volume service line.",
         questions: [
           {
-            id: "cat-1",
-            text: "Do you maintain centralized supplier and material data for your category?",
+            id: "hc-cdo-1",
+            text: "How do you ensure item and supplier masters stay aligned across EHR, ERP, and inventory systems?",
             options: [
-              "Yes—one governed catalog across sites.",
-              "Partly—we centralize top spend but some sites keep local lists.",
-              "No, each site manages its own suppliers and item data.",
+              "We run a governed hub that validates attributes and codes before changes propagate.",
+              "We have periodic reconciliations but rely on teams to fix mismatches ad hoc.",
+              "Each system owns its own masters; we fix issues when clinicians complain.",
             ],
             bestOptionIndex: 0,
             feedback: {
               best:
-                "Centralization gives leverage. CODA can keep it clean and highlight overlap for faster negotiations.",
+                "CODA can plug into that hub to harden validations and keep codes consistent across systems.",
               weak:
-                "Partial control hides leakage. CODA will normalize remaining items to reveal savings.",
+                "Reconciliations leave gaps. CODA automates cross-system checks so teams spend less time firefighting.",
               bad:
-                "Decentralized data hurts strategy. Position CODA as the hub that creates a single sourcing view.",
+                "Reactive fixes risk safety. Position CODA as the guardrail that prevents mismatches before they hit clinicians.",
             },
           },
           {
-            id: "cat-2",
-            text: "How do you check if suppliers offer different prices for the same item across sites?",
+            id: "hc-cdo-2",
+            text: "When regulators audit clinical or supply data, what evidence do you present?",
             options: [
-              "We compare normalized specs and price files regularly.",
-              "We review a few key items manually when renewing contracts.",
-              "We rely on sites to negotiate locally and assume it's optimized.",
+              "Traceable approvals with audit trails across systems.",
+              "Screenshots and shared spreadsheets from recent reconciliations.",
+              "We rely on vendor attestations and hope systems agree.",
             ],
             bestOptionIndex: 0,
             feedback: {
               best:
-                "Excellent. CODA can automate those comparisons and surface hidden variances instantly.",
+                "Traceability pairs with CODA’s lineage so audits are faster and cleaner.",
               weak:
-                "Manual spot checks miss value. CODA scales the analysis across the catalog.",
+                "Manual evidence is brittle. CODA provides governed history to reduce audit prep time.",
               bad:
-                "Assuming optimization leaves savings on the table. Use CODA to prove the gap quickly.",
+                "Hoping systems agree is risky. Use CODA to prove compliance with minimal effort.",
             },
           },
           {
-            id: "cat-3",
-            text: "When you build a negotiation pack, how confident are you in the underlying specs?",
+            id: "hc-cdo-3",
+            text: "What would you need to see in a 4-week pilot to fund broader rollout?",
             options: [
-              "Very confident—attributes are standardized and audited.",
-              "Somewhat—we clean them before major events.",
-              "Not confident—we rely on supplier quotes to figure it out.",
+              "Clear reduction in duplicate items plus cleaner reporting for a key service line.",
+              "Some dashboards that track data quality over time.",
+              "Proof clinicians won’t mind another governance step.",
             ],
             bestOptionIndex: 0,
             feedback: {
               best:
-                "Great. CODA keeps specs audit-ready so negotiation packs stay credible.",
+                "Lead with measurable duplication cuts and reporting lift; CODA can deliver that quickly.",
               weak:
-                "Pre-event cleanup is slow. CODA keeps specs clean continuously so you negotiate faster.",
+                "Dashboards without outcomes won’t unlock budget. Tie metrics to safety and compliance.",
               bad:
-                "Relying on suppliers erodes leverage. Position CODA as the data backbone for tough negotiations.",
+                "Adoption matters, but funding follows outcomes. Keep the focus on safety and auditability.",
             },
           },
         ],
       },
       {
-        id: "digitalLead",
-        name: "Digital Transformation Lead",
-        role: "Drives automation, IoT, and analytics programs that rely on clean data.",
+        id: "hcSupply",
+        name: "Supply Chain Director",
+        role: "Manages sourcing, contracts, and inventory across hospitals or labs.",
         shortDescription:
-          "Links digital success to standardized master data so initiatives don't stall from inconsistent records.",
+          "Wants consistent item masters and vendor data to negotiate confidently and prevent stockouts for clinicians.",
         focusAreas: [
-          "Data readiness for digital and automation use cases",
-          "Cross-site standards that enable scaling",
-          "Governed corrections when gaps appear",
+          "Contract compliance and formulary control",
+          "Avoiding duplicates and substitutions",
+          "Trusted availability for clinicians",
         ],
         redPath:
-          "Connect failed digital projects to data quality, then propose a readiness check on a high-visibility use case.",
+          "Connect clean masters to contract compliance and surgeon satisfaction, then propose a pilot on a priority category (implants, lab reagents).",
         questions: [
           {
-            id: "dig-1",
-            text: "How do you ensure digital and automation initiatives are backed by clean, standardized data?",
+            id: "hc-supply-1",
+            text: "How do you stop buying the same item under multiple descriptions or vendors?",
             options: [
-              "We embed data quality checks into every initiative.",
-              "We try, but standards vary by site.",
-              "We assume IT handles it behind the scenes.",
+              "A governed catalog blocks duplicates before requisitions are approved.",
+              "Buyers rely on experience to catch overlaps during PO creation.",
+              "We find issues later when invoices don’t match contracts.",
             ],
             bestOptionIndex: 0,
             feedback: {
               best:
-                "Strong discipline. CODA can accelerate those checks and keep standards enforced as you scale.",
+                "CODA accelerates that control with faster vendor onboarding and duplicate prevention.",
               weak:
-                "Variation by site is common. CODA harmonizes standards so use cases scale consistently.",
+                "Human checks miss patterns. CODA surfaces overlaps instantly so savings stick.",
               bad:
-                "Assumptions stall programs. Position CODA as the data readiness layer for your roadmap.",
+                "Late discovery erodes margins. Position CODA as the early warning system.",
             },
           },
           {
-            id: "dig-2",
-            text: "Do differences in naming or classification slow down rolling a use case across multiple plants?",
+            id: "hc-supply-2",
+            text: "What slows sourcing when clinicians request new items?",
             options: [
-              "No—we maintain consistent taxonomies everywhere.",
-              "Sometimes—we adjust mappings when we find issues.",
-              "Yes—each rollout needs custom work to map the data.",
+              "Unclear specs trigger back-and-forth before we go to contract.",
+              "We use a standard template with required attributes.",
+              "We place quick orders with preferred vendors and reconcile later.",
             ],
-            bestOptionIndex: 0,
+            bestOptionIndex: 1,
             feedback: {
               best:
-                "Consistency is gold. CODA keeps that taxonomy synchronized as new data arrives.",
+                "Templates are strong. CODA can prefill attributes and validate against current formulary to go faster.",
               weak:
-                "Manual mapping wastes time. CODA automates harmonization so rollouts stay fast.",
+                "CODA structures intake and proposes matches so sourcing isn’t slowed by email loops.",
               bad:
-                "Custom work per site kills scale. CODA standardizes the data fabric to unblock deployments.",
+                "Ordering first invites leakage. CODA keeps contracts and specs tight from the start.",
             },
           },
           {
-            id: "dig-3",
-            text: "What signal tells you a use case is at risk because of data quality?",
+            id: "hc-supply-3",
+            text: "How do you ensure substitutions or alternates don’t violate contracts or clinician preferences?",
             options: [
-              "Leading indicators like rising exceptions or model drift.",
-              "We notice when users complain about bad suggestions.",
-              "We don't track it—the team just fixes issues as they appear.",
+              "We track approved alternates with governed attributes and change control.",
+              "We document alternates in shared spreadsheets when issues arise.",
+              "We rely on vendors to suggest alternates and adjust afterward.",
             ],
             bestOptionIndex: 0,
             feedback: {
               best:
-                "Great. CODA can feed those indicators with real-time quality metrics tied to the use case.",
+                "CODA keeps those alternates synchronized and auditable across sites.",
               weak:
-                "User complaints are lagging. CODA surfaces quality risk before adoption drops.",
+                "Spreadsheets drift. CODA centralizes alternates so compliance is consistent.",
               bad:
-                "No signal equals surprises. CODA establishes the monitoring layer you need to scale.",
+                "Vendor-led alternates risk non-compliance. CODA protects contracts and clinical trust.",
+            },
+          },
+        ],
+      },
+      {
+        id: "hcClinicalEng",
+        name: "Clinical Engineering Director",
+        role: "Maintains devices and assets to keep care safe and compliant.",
+        shortDescription:
+          "Needs accurate asset and part data so maintenance is first-time-right and recalls are handled fast.",
+        focusAreas: [
+          "Recall readiness and traceability",
+          "BOM integrity for medical devices",
+          "Reducing downtime in critical areas",
+        ],
+        redPath:
+          "Tie normalized asset and part data to recall response and uptime, then pilot on a high-risk device family.",
+        questions: [
+          {
+            id: "hc-eng-1",
+            text: "How do you track which devices or parts are affected when a recall notice arrives?",
+            options: [
+              "We have a centralized register that maps assets to parts and vendors.",
+              "We pull reports from multiple systems and reconcile manually.",
+              "We check with technicians and vendors to piece it together.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA enriches that register and keeps lineage current so recalls are fast.",
+              weak:
+                "Manual reconciliation is slow. CODA links parts to assets automatically to cut response time.",
+              bad:
+                "Manual checks risk misses. CODA provides immediate traceability.",
+            },
+          },
+          {
+            id: "hc-eng-2",
+            text: "How do you prevent mismatched parts from being used during maintenance?",
+            options: [
+              "Standardized descriptions and approvals before parts are issued.",
+              "Supervisors rely on experience and photos to verify parts.",
+              "We swap parts if they look close and adjust later if needed.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps those standards enforced and synced across systems.",
+              weak:
+                "Experience is fragile. CODA captures that detail and standardizes it.",
+              bad:
+                "Swapping risks safety. CODA blocks mismatches upfront.",
+            },
+          },
+          {
+            id: "hc-eng-3",
+            text: "When specs differ across facilities, how do you decide the standard?",
+            options: [
+              "We harmonize to a corporate standard with documented rationale.",
+              "We debate case by case depending on who leads the project.",
+              "Each site runs its own specs if it works for them.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA preserves that rationale and prevents drift across facilities.",
+              weak:
+                "Case-by-case slows you down. CODA gives data to accelerate consensus.",
+              bad:
+                "Site autonomy dilutes safety. CODA enforces the chosen standard.",
+            },
+          },
+        ],
+      },
+      {
+        id: "hcQuality",
+        name: "Quality & Compliance Officer",
+        role: "Ensures data supports regulatory reporting and patient safety.",
+        shortDescription:
+          "Needs evidence that masters are governed so audits, UDI, and safety reporting are reliable.",
+        focusAreas: [
+          "Audit-ready lineage and approvals",
+          "UDI/IFU alignment across systems",
+          "Reducing manual reconciliations",
+        ],
+        redPath:
+          "Show how CODA enforces attributes and traceability for UDI and safety reporting, then co-design an audit pack pilot.",
+        questions: [
+          {
+            id: "hc-quality-1",
+            text: "What evidence do you provide to show item masters meet UDI or labeling requirements?",
+            options: [
+              "Governed attributes with clear approval history.",
+              "We keep spreadsheets and screenshots from recent updates.",
+              "Vendors provide attestations and we trust them.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA centralizes those attributes and approvals so evidence is instant.",
+              weak:
+                "Spreadsheets are brittle. CODA makes lineage audit-ready.",
+              bad:
+                "Vendor attestations alone are risky. CODA provides internal proof.",
+            },
+          },
+          {
+            id: "hc-quality-2",
+            text: "How do you monitor data quality across sites today?",
+            options: [
+              "We track completeness, duplicates, and errors per system.",
+              "We spot-check when issues surface in audits or incidents.",
+              "We rely on IT SLAs and assume they’re met.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA can feed those metrics and automate alerts to keep quality improving.",
+              weak:
+                "Reactive checks miss risk. CODA provides continuous monitoring and coaching.",
+              bad:
+                "Assumptions invite findings. CODA creates transparency and control.",
+            },
+          },
+          {
+            id: "hc-quality-3",
+            text: "When auditors challenge balances or traceability, how quickly can you respond?",
+            options: [
+              "Within hours because approvals and lineage are centralized.",
+              "It takes days of gathering evidence from multiple teams.",
+              "We wait for vendors or IT to send what they have.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that speed by making lineage accessible and consistent.",
+              weak:
+                "Long prep time is costly. CODA cuts collection by keeping evidence ready.",
+              bad:
+                "Waiting on others is risky. CODA provides instant answers.",
+            },
+          },
+        ],
+      },
+      {
+        id: "hcDigital",
+        name: "Digital Health Lead",
+        role: "Drives analytics, automation, and virtual care programs.",
+        shortDescription:
+          "Links digital success to standardized master data so new programs aren’t blocked by inconsistent records.",
+        focusAreas: [
+          "Data readiness for AI/analytics",
+          "Adoption by clinicians and operations",
+          "Reliable integrations across platforms",
+        ],
+        redPath:
+          "Show CODA as the quickest way to cleanse data feeding analytics or virtual care, then prove adoption in one program.",
+        questions: [
+          {
+            id: "hc-dig-1",
+            text: "Which digital programs are slowed most by data quality today?",
+            options: [
+              "Predictive analytics and virtual care reporting.",
+              "Procurement visibility and spend analytics.",
+              "We don’t have data quality issues slowing us down.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Tie CODA cleansing directly to those programs’ KPIs to justify investment.",
+              weak:
+                "Procurement matters—link it back to digital KPIs to keep alignment.",
+              bad:
+                "Issues surface later. CODA proves readiness before scaling.",
+            },
+          },
+          {
+            id: "hc-dig-2",
+            text: "How do you measure data quality improvements across initiatives?",
+            options: [
+              "We track completeness, duplicates, and error rates with dashboards.",
+              "We spot-check when projects fail tests.",
+              "We rely on vendor SLAs for quality.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA feeds those dashboards and keeps metrics trending up.",
+              weak:
+                "Spot checks are reactive. CODA provides continuous monitoring.",
+              bad:
+                "SLAs alone hide risk. CODA gives transparency and control.",
+            },
+          },
+          {
+            id: "hc-dig-3",
+            text: "What does success look like for your next release?",
+            options: [
+              "Higher adoption and trusted dashboards for clinicians.",
+              "Shipping on time even if data fidelity lags.",
+              "Just proving the technology works in a demo.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Map CODA outputs to adoption and trust so the release lands.",
+              weak:
+                "Timelines matter, but CODA keeps quality intact.",
+              bad:
+                "Demos alone don’t stick. Use CODA to ensure production readiness.",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "retail",
+    name: "Retail & eCommerce",
+    description: "Omnichannel retail with distributed stores, DCs, and digital storefronts.",
+    personas: [
+      {
+        id: "retailCoo",
+        name: "COO / Merchandising Lead",
+        role: "Owns category profitability, availability, and experience across channels.",
+        shortDescription:
+          "Wants trusted product data to avoid missed sales, inflated inventory, and inconsistent customer experiences.",
+        focusAreas: [
+          "On-shelf and online availability",
+          "Margin protection via clean assortments",
+          "Consistent product experience across channels",
+        ],
+        redPath:
+          "Quantify margin and availability hits from duplicate or inconsistent SKUs, then pilot CODA on a key category to prove uplift.",
+        questions: [
+          {
+            id: "retail-coo-1",
+            text: "How do you prevent duplicate or inconsistent SKUs across stores and eCommerce?",
+            options: [
+              "We govern attributes centrally and block duplicates before listings go live.",
+              "We reconcile feeds weekly and fix issues as they appear.",
+              "Each channel manages its own catalog; we clean up when customers complain.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA strengthens that control and accelerates onboarding for new products.",
+              weak:
+                "Weekly fixes leave leakage. CODA prevents duplicates before they hit shoppers.",
+              bad:
+                "Reactive cleanup hurts experience. Position CODA as the always-on guardrail.",
+            },
+          },
+          {
+            id: "retail-coo-2",
+            text: "What slows down launching a new assortment or seasonal drop?",
+            options: [
+              "Gathering complete attributes and images from suppliers.",
+              "We move fast; data gaps are filled later.",
+              "Approval cycles for pricing take the longest.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA standardizes intake, enriches attributes, and prevents duplicate SKUs so launches stay on time.",
+              weak:
+                "Filling gaps later risks errors. CODA cleans data up front to protect the drop.",
+              bad:
+                "Pricing matters, but data integrity underpins confidence—CODA de-risks it.",
+            },
+          },
+          {
+            id: "retail-coo-3",
+            text: "When SKUs drift across channels, what impact do you see first?",
+            options: [
+              "Lost sales or returns from wrong descriptions or images.",
+              "Increased warehouse touches but customers don’t notice.",
+              "No major impact—we correct it eventually.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Link CODA to revenue protection and reduced returns—fast justification for a pilot.",
+              weak:
+                "Ops pain still costs. Connect it to customer metrics to build urgency.",
+              bad:
+                "Complacency risks revenue. CODA prevents drift continuously.",
+            },
+          },
+        ],
+      },
+      {
+        id: "retailSupply",
+        name: "Supply Chain & Logistics Director",
+        role: "Moves inventory efficiently across DCs, stores, and customers.",
+        shortDescription:
+          "Needs clean masters so replenishment, routing, and substitutions don’t create waste or delays.",
+        focusAreas: [
+          "Accurate replenishment and allocations",
+          "Duplicate prevention in DCs and stores",
+          "Better substitutions for online orders",
+        ],
+        redPath:
+          "Connect data quality to delivery speed and waste reduction, then run a pilot on a high-volume region or DC.",
+        questions: [
+          {
+            id: "retail-supply-1",
+            text: "How do you keep replenishment signals accurate when SKUs vary by channel or region?",
+            options: [
+              "We normalize SKUs and locations in one governed master before planning.",
+              "We adjust forecasts manually when we notice discrepancies.",
+              "Each region manages its own codes; we reconcile during peak season.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps those masters synced automatically so planning stays accurate.",
+              weak:
+                "Manual adjustments are costly. CODA detects mismatches early.",
+              bad:
+                "Peak-only reconciliation is risky. CODA provides continuous alignment.",
+            },
+          },
+          {
+            id: "retail-supply-2",
+            text: "When a customer item is unavailable, how do you choose substitutes?",
+            options: [
+              "We maintain approved substitutes with shared attributes across channels.",
+              "Store teams pick alternatives based on experience.",
+              "We let customers choose anything similar onsite or online.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA enriches and governs substitute relationships so promises are accurate.",
+              weak:
+                "Experience varies. CODA standardizes substitutes for consistent service.",
+              bad:
+                "Uncontrolled substitutions risk returns. CODA keeps it disciplined.",
+            },
+          },
+          {
+            id: "retail-supply-3",
+            text: "How do you measure the cost of duplicate or mislabeled inventory across DCs?",
+            options: [
+              "We track duplication rates and carrying costs per DC.",
+              "We review write-offs annually and adjust buffers.",
+              "We don’t quantify it; we just add buffer stock.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA provides the data to shrink duplication and buffers confidently.",
+              weak:
+                "Annual reviews miss ongoing waste. CODA keeps the cost visible monthly.",
+              bad:
+                "Buffers hide waste. CODA proves where to reduce safely.",
+            },
+          },
+        ],
+      },
+      {
+        id: "retailEcom",
+        name: "eCommerce / Digital Product Lead",
+        role: "Owns digital experience and conversion across web and mobile.",
+        shortDescription:
+          "Needs consistent product content so search, recommendations, and PDPs convert reliably.",
+        focusAreas: [
+          "Search and recommendation accuracy",
+          "Speed to publish new products",
+          "Content consistency across locales",
+        ],
+        redPath:
+          "Show how CODA cleans and enriches content to lift conversion and reduce returns; pilot on one high-traffic category.",
+        questions: [
+          {
+            id: "retail-ecom-1",
+            text: "What causes the most returns or cart abandonment from a data standpoint?",
+            options: [
+              "Inaccurate or incomplete product attributes and images.",
+              "Delivery estimates can be off during promotions.",
+              "Price changes not reflected everywhere.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA’s clean attributes and media governance directly reduce returns and abandonment.",
+              weak:
+                "Delivery matters, but attribute accuracy is the foundation—CODA can help there first.",
+              bad:
+                "Price sync is important; CODA still helps by standardizing masters feeding pricing.",
+            },
+          },
+          {
+            id: "retail-ecom-2",
+            text: "How quickly can you launch a new vendor’s catalog online?",
+            options: [
+              "Within days because attributes and taxonomy are standardized.",
+              "A couple of weeks—content cleanup takes time.",
+              "It varies; we often copy what vendors provide and fix later.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA accelerates onboarding further by automating mapping and validation.",
+              weak:
+                "CODA can shrink those weeks by normalizing attributes automatically.",
+              bad:
+                "Copying invites errors. CODA cleans content before it hits the site.",
+            },
+          },
+          {
+            id: "retail-ecom-3",
+            text: "How do you ensure translations or locale variations stay aligned?",
+            options: [
+              "We govern source attributes and localizations centrally.",
+              "We rely on local teams to update when they notice issues.",
+              "We don’t manage it closely; mismatches are rare.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA preserves source-of-truth attributes and keeps locales synchronized.",
+              weak:
+                "Local teams have limits. CODA keeps alignment without extra effort.",
+              bad:
+                "Assuming rarity risks CX. CODA provides continuous control.",
+            },
+          },
+        ],
+      },
+      {
+        id: "retailInventory",
+        name: "Inventory Planning Manager",
+        role: "Plans demand and allocates stock across channels and stores.",
+        shortDescription:
+          "Needs reliable masters so forecasts, allocations, and substitutes don’t misfire.",
+        focusAreas: [
+          "Forecast accuracy",
+          "Stock visibility across network",
+          "Trusted substitutions",
+        ],
+        redPath:
+          "Tie clean masters to forecast accuracy and allocation wins, then pilot CODA on a volatile category.",
+        questions: [
+          {
+            id: "retail-inv-1",
+            text: "How do you keep forecasts accurate when item definitions differ by region or channel?",
+            options: [
+              "We harmonize item definitions before planning and track variants explicitly.",
+              "We adjust forecasts manually when we notice variances.",
+              "Each region plans independently with its own codes.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA maintains that harmony automatically so planners trust the signals.",
+              weak:
+                "Manual adjustments are costly. CODA highlights mismatches early.",
+              bad:
+                "Independent codes break visibility. CODA creates one view fast.",
+            },
+          },
+          {
+            id: "retail-inv-2",
+            text: "When promotions change demand, how do you ensure substitutes don’t inflate returns?",
+            options: [
+              "We manage approved substitutes with matching attributes and track performance.",
+              "Stores decide substitutes based on what’s available.",
+              "We don’t manage substitutes closely.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA governs substitutes and ties them to outcomes, reducing return risk.",
+              weak:
+                "Local decisions vary. CODA standardizes substitutes for consistent results.",
+              bad:
+                "No management invites errors. CODA brings control quickly.",
+            },
+          },
+          {
+            id: "retail-inv-3",
+            text: "How do you measure the cost of bad masters on forecast error or stockouts?",
+            options: [
+              "We quantify impact by category and adjust plans accordingly.",
+              "We infer it from service levels but don’t isolate data quality.",
+              "We don’t measure; we focus on moving inventory.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA feeds that measurement with real duplication and error rates.",
+              weak:
+                "CODA helps isolate data quality so service-level fixes are targeted.",
+              bad:
+                "Without measurement, value stays hidden. CODA surfaces it quickly.",
+            },
+          },
+        ],
+      },
+      {
+        id: "retailGovernance",
+        name: "Data Governance / IT Director",
+        role: "Sets standards and integrations across commerce, stores, and supply systems.",
+        shortDescription:
+          "Needs a way to enforce taxonomy, approvals, and integrations without slowing the business.",
+        focusAreas: [
+          "Taxonomy and attribute governance",
+          "Cross-system synchronization",
+          "Low-friction adoption by business teams",
+        ],
+        redPath:
+          "Show how CODA automates validation and approvals across PIM, ERP, and eCommerce, then run a low-friction pilot with one brand.",
+        questions: [
+          {
+            id: "retail-gov-1",
+            text: "How do you validate attributes before products sync to ERP and eCommerce?",
+            options: [
+              "Automated validations with clear exception handling.",
+              "We rely on periodic cleanups and user reports.",
+              "We rarely validate; speed matters most.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA enhances those validations and keeps exceptions traceable.",
+              weak:
+                "Cleanups miss issues. CODA adds continuous checks without slowing teams.",
+              bad:
+                "Skipping validation invites errors. CODA gives speed and control together.",
+            },
+          },
+          {
+            id: "retail-gov-2",
+            text: "Who owns approvals for new products or changes today?",
+            options: [
+              "Clear RACI with business owning content and IT owning standards.",
+              "Shared, but it depends on who is available.",
+              "No defined owner; it happens as part of projects.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA codifies that RACI and provides evidence leadership expects.",
+              weak:
+                "Ad-hoc ownership risks drift. CODA standardizes approvals and SLAs.",
+              bad:
+                "No ownership means chaos. CODA brings governed flow without slowing releases.",
+            },
+          },
+          {
+            id: "retail-gov-3",
+            text: "How do you detect and resolve duplicates before they reach downstream systems?",
+            options: [
+              "Automated validations at creation with clear exception handling.",
+              "Periodic cleanups or user reports catch most issues.",
+              "We rarely detect them; we fix when customers complain.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA amplifies that automation and keeps catalogs aligned across systems.",
+              weak:
+                "Cleanups leave leakage. CODA provides continuous checks.",
+              bad:
+                "Reactive fixes hurt CX. CODA prevents issues upfront.",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "financialServices",
+    name: "Financial Services",
+    description: "Banks, insurers, and fintechs balancing growth, risk, and regulatory control.",
+    personas: [
+      {
+        id: "fsCdo",
+        name: "Chief Data Officer",
+        role: "Owns data quality, lineage, and controls across products and customers.",
+        shortDescription:
+          "Needs governed masters so analytics, onboarding, and regulatory reports align across systems.",
+        focusAreas: [
+          "Golden records for customer and product",
+          "Regulatory reporting accuracy",
+          "Faster onboarding for new products",
+        ],
+        redPath:
+          "Connect CODA to reduced reconciliation effort and cleaner regulatory submissions, then pilot on a product line.",
+        questions: [
+          {
+            id: "fs-cdo-1",
+            text: "How do you maintain golden records for customers and products across core systems?",
+            options: [
+              "We run a governed hub with automated matching and approvals.",
+              "We reconcile monthly and rely on data stewards.",
+              "Each system owns its records; we align them during projects.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA strengthens that hub and surfaces issues before they propagate.",
+              weak:
+                "Monthly reconciliation leaves drift. CODA automates checks continuously.",
+              bad:
+                "Project-based alignment risks errors. CODA provides a consistent baseline.",
+            },
+          },
+          {
+            id: "fs-cdo-2",
+            text: "What slows down new product onboarding from a data perspective?",
+            options: [
+              "Defining required attributes and mapping to downstream systems.",
+              "Coordinating with compliance on naming and codes.",
+              "Convincing teams to adopt new templates.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA standardizes attributes and mappings so onboarding is faster and safer.",
+              weak:
+                "Compliance alignment is easier with CODA’s governed templates.",
+              bad:
+                "Adoption improves when CODA reduces manual work—start there.",
+            },
+          },
+          {
+            id: "fs-cdo-3",
+            text: "How do you evidence lineage and approvals during regulatory exams?",
+            options: [
+              "Centralized lineage with documented approvals.",
+              "Exports from multiple systems and email threads.",
+              "We ask teams to gather evidence on demand.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps lineage and approvals audit-ready and easy to present.",
+              weak:
+                "Manual exports are fragile. CODA provides consistent evidence.",
+              bad:
+                "Ad-hoc gathering is risky. CODA gives instant answers.",
+            },
+          },
+        ],
+      },
+      {
+        id: "fsRisk",
+        name: "Risk & Compliance Officer",
+        role: "Ensures data supports KYC, AML, and regulatory obligations.",
+        shortDescription:
+          "Needs confidence that masters meet policy so audits, KYC, and AML controls are reliable.",
+        focusAreas: [
+          "KYC/AML data completeness",
+          "Audit-ready controls and lineage",
+          "Reducing false positives and rework",
+        ],
+        redPath:
+          "Show how CODA enforces required attributes and lineage to cut false positives and audit prep time; pilot on onboarding.",
+        questions: [
+          {
+            id: "fs-risk-1",
+            text: "How do you ensure KYC/AML attributes are complete and validated?",
+            options: [
+              "Automated validations with clear exception handling.",
+              "Periodic reviews and manual sampling.",
+              "We trust front-line capture and address gaps later.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA reinforces those validations and keeps evidence traceable.",
+              weak:
+                "Sampling misses risk. CODA checks continuously without heavy lift.",
+              bad:
+                "Deferring fixes risks fines. CODA prevents gaps early.",
+            },
+          },
+          {
+            id: "fs-risk-2",
+            text: "What drives most false positives in your monitoring today?",
+            options: [
+              "Inconsistent or incomplete customer and counterparty data.",
+              "Rules need tuning but data is solid.",
+              "Volume is just high; we accept it.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA cleanses masters so rules operate on reliable data, reducing noise.",
+              weak:
+                "Rule tuning helps, but CODA ensures the data foundation is trusted.",
+              bad:
+                "Accepting noise wastes time. CODA shows quick reductions via better data.",
+            },
+          },
+          {
+            id: "fs-risk-3",
+            text: "When regulators ask for evidence, how quickly can you provide it?",
+            options: [
+              "Within hours because lineage and approvals are centralized.",
+              "Days—we gather logs from multiple teams.",
+              "We escalate to IT and wait for exports.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that speed by making lineage accessible and consistent.",
+              weak:
+                "Long prep is costly. CODA cuts it by centralizing evidence.",
+              bad:
+                "Waiting is risky. CODA gives instant answers.",
+            },
+          },
+        ],
+      },
+      {
+        id: "fsOps",
+        name: "Operations / Claims Director",
+        role: "Drives efficiency and accuracy across servicing and claims.",
+        shortDescription:
+          "Wants clean masters so claims, servicing, and policy changes are handled fast without rework.",
+        focusAreas: [
+          "First-time-right servicing",
+          "Reducing rework and manual checks",
+          "Better vendor and partner data",
+        ],
+        redPath:
+          "Tie data quality to cycle time and rework reduction, then pilot on one claim or servicing journey.",
+        questions: [
+          {
+            id: "fs-ops-1",
+            text: "Where do data issues slow claims or servicing the most?",
+            options: [
+              "Mismatched customer or policy data between systems.",
+              "Occasional vendor data gaps but we manage.",
+              "We don’t see major slowdowns from data quality.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA synchronizes masters so claims flow without rekeying or checks.",
+              weak:
+                "Vendor gaps still cost time. CODA standardizes those feeds too.",
+              bad:
+                "Issues often stay hidden. CODA surfaces them and shows quick wins.",
+            },
+          },
+          {
+            id: "fs-ops-2",
+            text: "How do you prevent duplicate vendors or partners from entering the system?",
+            options: [
+              "Automated duplicate checks and approvals at creation.",
+              "We rely on periodic cleanups or user reports.",
+              "We merge duplicates when finance escalates.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA strengthens those checks and keeps integrations clean.",
+              weak:
+                "Cleanups leave leakage. CODA catches duplicates instantly.",
+              bad:
+                "Late merges create rework. CODA blocks issues up front.",
+            },
+          },
+          {
+            id: "fs-ops-3",
+            text: "How do you measure the impact of bad masters on cycle time or NPS?",
+            options: [
+              "We quantify rework and delays tied to data quality.",
+              "We infer it from SLA misses but don’t isolate data issues.",
+              "We don’t measure; we focus on throughput.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA feeds that measurement with duplication and error rates tied to process steps.",
+              weak:
+                "CODA helps isolate data-driven SLA misses for targeted fixes.",
+              bad:
+                "Without measurement, value is hidden. CODA surfaces it quickly.",
+            },
+          },
+        ],
+      },
+      {
+        id: "fsTreasury",
+        name: "Treasury / Finance Transformation",
+        role: "Safeguards liquidity, reporting accuracy, and capital efficiency.",
+        shortDescription:
+          "Needs harmonized masters to reduce reconciliation effort and make funding decisions faster.",
+        focusAreas: [
+          "Consolidated visibility across ledgers",
+          "Working-capital unlocks from clean data",
+          "Faster close and reporting",
+        ],
+        redPath:
+          "Quantify reconciliation effort and cash leakage from duplicates, then pilot CODA to prove faster close on one entity or product line.",
+        questions: [
+          {
+            id: "fs-treasury-1",
+            text: "How do you reconcile balances across systems when masters differ?",
+            options: [
+              "We trust a governed master that feeds consolidation.",
+              "We run manual reconciliations each close.",
+              "We adjust entries after findings from audit or FP&A.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that governed master consistent and auditable.",
+              weak:
+                "Manual reconciliations are costly. CODA reduces effort with clean masters.",
+              bad:
+                "Post-close adjustments hide risk. CODA provides confidence earlier.",
+            },
+          },
+          {
+            id: "fs-treasury-2",
+            text: "How do you estimate working capital tied up due to duplicate or stale records?",
+            options: [
+              "We model scenarios using accurate, standardized masters.",
+              "We approximate based on historical write-offs.",
+              "We don’t calculate; we assume buffers are necessary.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA feeds accurate duplication rates to sharpen those models and unlock cash.",
+              weak:
+                "Estimates can improve quickly with CODA’s real data.",
+              bad:
+                "Assumptions hide cash. CODA proves where to release it safely.",
+            },
+          },
+          {
+            id: "fs-treasury-3",
+            text: "When auditors challenge data lineage, how do you respond?",
+            options: [
+              "We provide documented lineage and approvals within hours.",
+              "We gather evidence from multiple teams over several days.",
+              "We escalate to IT and wait for exports.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA maintains that readiness with centralized lineage.",
+              weak:
+                "Long prep is costly. CODA keeps evidence ready.",
+              bad:
+                "Waiting is risky. CODA provides immediate answers.",
+            },
+          },
+        ],
+      },
+      {
+        id: "fsDigital",
+        name: "Digital Channels Lead",
+        role: "Owns digital onboarding, servicing, and personalization.",
+        shortDescription:
+          "Needs consistent masters so onboarding, offers, and analytics work across channels without friction.",
+        focusAreas: [
+          "Onboarding speed and accuracy",
+          "Personalization with trusted data",
+          "Integration reliability across channels",
+        ],
+        redPath:
+          "Show how CODA cleanses and standardizes data feeding onboarding and personalization, then pilot on one journey to prove adoption lift.",
+        questions: [
+          {
+            id: "fs-digital-1",
+            text: "Which digital journeys suffer most from data quality today?",
+            options: [
+              "Onboarding and personalized offers.",
+              "Back-office reporting only.",
+              "We don’t see issues yet.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Tie CODA cleansing directly to onboarding conversion and offer accuracy.",
+              weak:
+                "Reporting matters, but CODA proves value faster in frontline journeys.",
+              bad:
+                "Issues appear later. CODA proves readiness now.",
+            },
+          },
+          {
+            id: "fs-digital-2",
+            text: "How do you measure if data quality is improving for digital channels?",
+            options: [
+              "We track completeness, duplicates, and error rates tied to journeys.",
+              "We check when tests fail before releases.",
+              "We rely on vendor SLAs for quality.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA feeds those metrics and keeps them trending the right way.",
+              weak:
+                "Tests are late signals. CODA provides continuous monitoring.",
+              bad:
+                "SLAs alone hide risk. CODA adds transparency and control.",
+            },
+          },
+          {
+            id: "fs-digital-3",
+            text: "What does success look like for your next digital release?",
+            options: [
+              "Higher adoption and trusted experiences across channels.",
+              "Shipping on time even if data fidelity lags.",
+              "Just proving the technology works in a demo.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Map CODA outputs to adoption and trust so the release lands.",
+              weak:
+                "Timelines matter, but CODA keeps quality intact.",
+              bad:
+                "Demos alone don’t stick. Use CODA to ensure production readiness.",
             },
           },
         ],
@@ -1587,6 +2518,7 @@ let currentIndustry = null;
 let currentPersona = null;
 let currentQuestionIndex = 0;
 let totalQuestions = 0;
+let displayedQuestionText = "";
 
 function init() {
   renderLibraryMetrics();
@@ -1782,6 +2714,7 @@ function startRoleplay() {
   if (!currentPersona) return;
   currentQuestionIndex = 0;
   totalQuestions = currentPersona.questions.length;
+  displayedQuestionText = "";
   scenarioTitleEl.textContent = `${currentPersona.name} Roleplay`;
   scenarioDescriptionEl.textContent = currentPersona.shortDescription;
   restartButton.disabled = false;
@@ -1797,6 +2730,7 @@ function resetConversation() {
     '<p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>';
   currentPromptEl.innerHTML = "<strong>Question:</strong> —";
   answerOptionsEl.innerHTML = "";
+  displayedQuestionText = "";
   feedbackContentEl.innerHTML =
     '<p>Answer quality, context, and the recommended red path will appear here.</p>';
   restartButton.disabled = true;
@@ -1811,7 +2745,11 @@ function renderCurrentQuestion() {
     return;
   }
 
-  currentPromptEl.innerHTML = `<strong>Question:</strong> ${question.text}`;
+  displayedQuestionText = formatOpeningQuestion(
+    question.text,
+    currentQuestionIndex === 0
+  );
+  currentPromptEl.innerHTML = `<strong>Question:</strong> ${displayedQuestionText}`;
   answerOptionsEl.innerHTML = "";
 
   question.options.forEach((optionText, index) => {
@@ -1825,8 +2763,17 @@ function renderCurrentQuestion() {
 
 function handleAnswer(question, selectedIndex) {
   const evaluation = evaluateAnswer(question, selectedIndex);
-  addConversationEntry(question.text, question.options[selectedIndex], evaluation.quality);
-  updateFeedback(evaluation.feedbackMessage, evaluation.quality);
+  addConversationEntry(
+    displayedQuestionText || question.text,
+    question.options[selectedIndex],
+    evaluation.quality
+  );
+  updateFeedback(
+    evaluation.feedbackMessage,
+    evaluation.quality,
+    question,
+    displayedQuestionText || question.text
+  );
   currentQuestionIndex += 1;
   refreshProgress(currentQuestionIndex, totalQuestions);
   renderCurrentQuestion();
@@ -1881,12 +2828,20 @@ function addConversationEntry(question, answer, quality) {
   conversationLogEl.scrollTop = conversationLogEl.scrollHeight;
 }
 
-function updateFeedback(feedback, quality) {
+function updateFeedback(feedback, quality, question, displayedQuestion) {
+  const importance = buildImportanceNote(question, displayedQuestion);
+  const coachingCue = buildCoachingCue(quality);
+
   feedbackContentEl.innerHTML = `
     <div class="feedback-card">
-      <p><strong>Quality:</strong> ${quality}</p>
-      <p>${ensureSentence(feedback)}</p>
-      <p><strong>Next step:</strong> Keep probing with CODA outcomes in mind.</p>
+      <div class="feedback-details">
+        <p><strong>Quality:</strong> ${quality}</p>
+        <div class="feedback-note"><strong>Why this question matters:</strong> ${importance}</div>
+        <div class="feedback-note"><strong>Coaching cue:</strong> ${coachingCue}</div>
+        <div class="feedback-note"><strong>Persona-specific guidance:</strong> ${ensureSentence(
+          feedback
+        )}</div>
+      </div>
     </div>
   `;
 }
@@ -1938,6 +2893,29 @@ function getQualityClass(quality) {
   }
 }
 
+function ensureQuestion(text) {
+  if (typeof text !== "string") return "How does this impact your operation?";
+  const trimmed = text.trim();
+  if (!trimmed) return "How does this impact your operation?";
+  const sanitized = trimmed.replace(/[?]+$/, "");
+  return `${sanitized}?`;
+}
+
+function formatOpeningQuestion(questionText, isFirstQuestion) {
+  const baseQuestion = ensureQuestion(typeof questionText === "string" ? questionText.trim() : "");
+
+  if (!isFirstQuestion) {
+    return baseQuestion;
+  }
+
+  const industryName = currentIndustry?.name || "this industry";
+  const personaLabel = currentPersona?.role || currentPersona?.name || "leader";
+  const focusPunch = (currentPersona?.focusAreas || [])[0] || "working capital and reliability";
+  const dramaticHook = `Recently, a ${personaLabel} in ${industryName} unlocked $10M by eliminating 10% duplicate stock tied to ${focusPunch}—`;
+
+  return ensureQuestion(`${dramaticHook} ${baseQuestion}`);
+}
+
 function ensureSentence(text) {
   if (typeof text !== "string") return "";
   const trimmed = text.trim();
@@ -1947,6 +2925,32 @@ function ensureSentence(text) {
     return trimmed;
   }
   return `${trimmed}.`;
+}
+
+function buildImportanceNote(question, displayedQuestion) {
+  const focusAreas = currentPersona?.focusAreas || [];
+  const focusSummary = focusAreas.slice(0, 2).join(" and ") || "cash, reliability, and control";
+  const topicSource =
+    (typeof displayedQuestion === "string" && displayedQuestion.trim()) ||
+    (typeof question?.text === "string" && question.text.trim()) ||
+    "this topic";
+  const topic = typeof topicSource === "string" ? topicSource.toLowerCase() : "this topic";
+
+  return ensureSentence(
+    `This opener combines a proof point with ${topic.toLowerCase()} to test how the persona links data quality to ${focusSummary}. It sets up CODA as the fastest path to repeat that win.`
+  ).replace("..", ".");
+}
+
+function buildCoachingCue(quality) {
+  const personaOutcome = currentPersona?.redPath || "Guide toward an evidence-backed PoC.";
+  const baseCue =
+    quality === "Optimal"
+      ? "Strong response—affirm the impact and suggest how CODA proves it in a 4-week pulse."
+      : quality === "Medium"
+      ? "Good instinct—tighten the link to business KPIs so the persona feels the urgency."
+      : "Reframe with a crisp business outcome before diving into details to keep credibility high.";
+
+  return ensureSentence(`${baseCue} ${personaOutcome}`);
 }
 
 init();
