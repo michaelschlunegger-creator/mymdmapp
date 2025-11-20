@@ -706,6 +706,860 @@ const verticals = [
       },
     ],
   },
+  {
+    id: "utilities",
+    name: "Utilities",
+    description: "Regulated grid and generation operators balancing reliability with modernization.",
+    personas: [
+      {
+        id: "utilityExec",
+        name: "COO / CFO",
+        role: "Owns grid reliability, rate cases, and capital efficiency.",
+        shortDescription:
+          "Needs defensible data for rate cases and capital plans while keeping inventory lean across depots.",
+        focusAreas: [
+          "Evidence for regulatory filings",
+          "Working-capital release without reliability risk",
+          "Cross-site consistency for audits",
+        ],
+        redPath:
+          "Tie duplicate materials to rate impacts, prove how CODA maintains auditable masters, and scope a pilot on a critical asset class.",
+        questions: [
+          {
+            id: "util-exec-1",
+            text: "How do you quantify spare-parts carrying cost when filing a rate case?",
+            options: [
+              "Finance estimates based on prior-year reserves and carry a buffer for uncertainty.",
+              "We track live duplication rates and capitalize only what’s trusted.",
+              "We defer to engineering’s judgment and true-up annually.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "Great—CODA can feed those live rates with audit-ready lineage to strengthen the filing.",
+              weak:
+                "Buffers hide cash. Use CODA to replace estimates with data-backed visibility before the next filing.",
+              bad:
+                "Annual true-ups risk regulator pushback. Position CODA as the control that keeps capital plans defensible.",
+            },
+          },
+          {
+            id: "util-exec-2",
+            text: "When regulators question asset data, what evidence do you present?",
+            options: [
+              "Governed masters with approvals and change history.",
+              "Manual spreadsheets compiled before the hearing.",
+              "We rely on OEM docs and hope they suffice.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Perfect fit. CODA can centralize that history and keep it ready for discovery.",
+              weak:
+                "Manual prep is risky. CODA reduces scramble time and increases confidence.",
+              bad:
+                "OEM docs alone won’t fly. Use CODA to show proactive governance.",
+            },
+          },
+          {
+            id: "util-exec-3",
+            text: "What would make you greenlight a 4-week master-data pilot?",
+            options: [
+              "Proof of cash release plus a roadmap to embed governance in capital projects.",
+              "A few quality reports to share with the board.",
+              "Demonstrating integration with the outage management system.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Align the pilot to cash and governance outcomes, then map CODA outputs directly to capital planning.",
+              weak:
+                "Reports alone won’t shift budgets. Anchor on measurable release and compliance strength.",
+              bad:
+                "Integrations help, but lead with financial and regulatory wins.",
+            },
+          },
+        ],
+      },
+      {
+        id: "gridOps",
+        name: "Grid Operations Director",
+        role: "Keeps grid uptime high and crews safe during outages and storms.",
+        shortDescription:
+          "Needs accurate materials and configurations so field crews install the right components the first time.",
+        focusAreas: [
+          "First-time-right dispatch",
+          "Storm stock accuracy",
+          "Work package clarity",
+        ],
+        redPath:
+          "Link bad descriptions to truck-roll risk, then show CODA keeping BOMs and compatible parts aligned across depots.",
+        questions: [
+          {
+            id: "grid-1",
+            text: "How do you ensure a crew picks the right transformer or switch on the first visit?",
+            options: [
+              "Supervisors rely on photos and tribal knowledge during dispatch.",
+              "We enforce standardized descriptions and compatible parts lists in the work order.",
+              "We send multiple options on the truck to be safe.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "CODA reinforces those standards and prevents drift as suppliers change.",
+              weak:
+                "Tribal knowledge is fragile. CODA can codify it so every crew benefits.",
+              bad:
+                "Overstocking trucks is costly. CODA keeps picks precise and efficient.",
+            },
+          },
+          {
+            id: "grid-2",
+            text: "When a BOM references an obsolete part, what happens?",
+            options: [
+              "Dispatch pauses while planners hunt for a replacement.",
+              "We have automated cross-references that point to approved alternates.",
+              "Crews improvise in the field if they can.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "CODA can keep those alternates current so crews move fast with confidence.",
+              weak:
+                "Hunting wastes time. CODA synchronizes BOMs and alternates automatically.",
+              bad:
+                "Improvisation creates risk. Use CODA to enforce safe, approved choices.",
+            },
+          },
+          {
+            id: "grid-3",
+            text: "How do you decide storm stock levels across service centers?",
+            options: [
+              "We overstock because specs differ and we can’t be sure.",
+              "We harmonize specs and run a single safety-stock model.",
+              "Each center guesses based on history.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "Harmonized specs pair with CODA to keep buffers lean without risking uptime.",
+              weak:
+                "Overstocking is costly. CODA’s deduplication shrinks buffers safely.",
+              bad:
+                "Guesswork hides risk. CODA provides a governed baseline to plan from.",
+            },
+          },
+        ],
+      },
+      {
+        id: "supplyLead",
+        name: "Supply Chain / SCM",
+        role: "Secures materials and services while meeting rate and service goals.",
+        shortDescription:
+          "Wants standardized specs to consolidate suppliers, speed RFQs, and avoid maverick spend during outages.",
+        focusAreas: [
+          "Duplicate prevention in sourcing",
+          "Faster RFQs with complete specs",
+          "Supplier consolidation by normalized spend",
+        ],
+        redPath:
+          "Quantify savings leakage from duplicates and show CODA accelerating emergency and planned sourcing with clean specs.",
+        questions: [
+          {
+            id: "util-scm-1",
+            text: "How do you prevent buying the same part under multiple vendor names?",
+            options: [
+              "Buyers rely on experience during PO creation.",
+              "Our governed catalog blocks duplicates before approval.",
+              "We assume vendors will correct us if we order wrong.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "CODA keeps that catalog current with vendor data so duplicates stay out.",
+              weak:
+                "Human checks miss patterns. CODA surfaces overlaps instantly.",
+              bad:
+                "Relying on vendors erodes leverage. CODA restores control.",
+            },
+          },
+          {
+            id: "util-scm-2",
+            text: "What slows you down when engineering requests a new component?",
+            options: [
+              "Specs are unclear so we email back and forth.",
+              "We require standard attributes upfront.",
+              "We default to the usual vendor to save time.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "CODA can prefill and validate attributes to speed intake further.",
+              weak:
+                "Email loops cost time. CODA structures the intake and proposes matches.",
+              bad:
+                "Defaulting to one vendor hides value. CODA enables competitive sourcing fast.",
+            },
+          },
+          {
+            id: "util-scm-3",
+            text: "How do you decide which suppliers to consolidate first?",
+            options: [
+              "We analyze normalized spend by category and spec.",
+              "We pick the highest spend vendors overall.",
+              "We wait for contract renewals without deep analysis.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA feeds that normalization so you can negotiate confidently.",
+              weak:
+                "High spend is a start; CODA reveals hidden overlaps.",
+              bad:
+                "Waiting leaves money on the table. CODA enables proactive strategy.",
+            },
+          },
+        ],
+      },
+      {
+        id: "assetEngineer",
+        name: "Asset Engineering",
+        role: "Owns asset standards, compatibility, and reliability across the fleet.",
+        shortDescription:
+          "Needs BOMs and asset registers synchronized so failures aren’t caused by mismatched specs or lineage gaps.",
+        focusAreas: [
+          "Centralized asset standards",
+          "BOM accuracy and revision control",
+          "Failure risk reduction",
+        ],
+        redPath:
+          "Start with data standardization across regions, then validate a critical asset class with CODA’s recommendations.",
+        questions: [
+          {
+            id: "util-eng-1",
+            text: "Do you maintain one asset register or do regions manage their own?",
+            options: [
+              "Centralized with clear standards.",
+              "Partly centralized—regions have autonomy.",
+              "Each region runs its own register.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that register synchronized with material masters.",
+              weak:
+                "Partial control risks drift. CODA standardizes remaining regions quickly.",
+              bad:
+                "Decentralization increases failure risk. CODA creates a governed baseline.",
+            },
+          },
+          {
+            id: "util-eng-2",
+            text: "How do you keep BOMs synchronized when suppliers change?",
+            options: [
+              "Periodic reconciliations with engineering oversight.",
+              "Project teams update BOMs when they remember.",
+              "We assume BOMs are correct unless something fails.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA can automate validations and recommendations between cycles.",
+              weak:
+                "Ad-hoc updates miss issues. CODA provides continuous checks.",
+              bad:
+                "Assumptions hide risk. CODA surfaces mismatches early.",
+            },
+          },
+          {
+            id: "util-eng-3",
+            text: "When standards differ by region, how do you pick the winner?",
+            options: [
+              "We harmonize to a corporate standard with documented rationale.",
+              "We decide case by case depending on the project lead.",
+              "We let each region run what works for them.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that decision visible and prevents drift.",
+              weak:
+                "Case-by-case slows you down. CODA accelerates consensus with data.",
+              bad:
+                "Autonomy dilutes integrity. CODA enforces the chosen standard.",
+            },
+          },
+        ],
+      },
+      {
+        id: "digitalUtility",
+        name: "Digital Transformation Lead",
+        role: "Drives grid automation, analytics, and workforce tools.",
+        shortDescription:
+          "Links digital success to standardized master data so initiatives don’t stall from inconsistent records.",
+        focusAreas: [
+          "Data readiness for automation/AMI",
+          "Reliable master data powering analytics",
+          "Change adoption across districts",
+        ],
+        redPath:
+          "Show how CODA cleanses data to unblock automation releases, then co-design a proof for a priority program.",
+        questions: [
+          {
+            id: "util-dig-1",
+            text: "Which digital programs struggle most because of data quality?",
+            options: [
+              "Grid automation and outage analytics.",
+              "Procurement visibility across regions.",
+              "We don’t have data quality issues slowing us down.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Great—tie CODA cleansing directly to automation and reliability wins.",
+              weak:
+                "Visibility matters, but connect it back to digital KPIs.",
+              bad:
+                "Issues surface later. Use CODA to prove readiness before scaling.",
+            },
+          },
+          {
+            id: "util-dig-2",
+            text: "How do you measure data quality progress across initiatives?",
+            options: [
+              "We track completeness, duplicates, and error rates per system.",
+              "We spot-check when projects fail tests.",
+              "We rely on vendor SLAs instead of measuring.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA can feed those metrics and keep them moving in the right direction.",
+              weak:
+                "Spot checks are reactive. Offer a CODA dashboard to make progress visible.",
+              bad:
+                "SLAs alone hide risk. CODA provides transparency and control.",
+            },
+          },
+          {
+            id: "util-dig-3",
+            text: "What does success look like for your next automation release?",
+            options: [
+              "Higher adoption and trusted dashboards for crews.",
+              "Shipping on time even if data fidelity lags.",
+              "Just proving the technology works in a demo.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Map CODA outputs to adoption and trust so the release lands.",
+              weak:
+                "Timelines matter, but CODA helps ship with quality intact.",
+              bad:
+                "Demos alone don’t stick. Use CODA to ensure production readiness.",
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: "manufacturing",
+    name: "Manufacturing",
+    description: "Discrete production with multi-site plants and complex supplier networks.",
+    personas: [
+      {
+        id: "mfgExec",
+        name: "VP Operations / CFO",
+        role: "Owns throughput, cost, and capital effectiveness across plants.",
+        shortDescription:
+          "Needs trustworthy data to cut working capital while keeping production schedules predictable.",
+        focusAreas: [
+          "Working-capital release",
+          "Schedule adherence",
+          "Cross-plant visibility",
+        ],
+        redPath:
+          "Quantify duplicate-driven cash leakage, link cleansed masters to schedule adherence, and propose a pilot on a flagship line.",
+        questions: [
+          {
+            id: "mfg-exec-1",
+            text: "How do you measure cash tied up in duplicate or obsolete parts across plants?",
+            options: [
+              "We have a live dashboard that flags duplicates and excess stock.",
+              "Controllers estimate based on historical write-offs.",
+              "We don’t measure; we carry extra to avoid downtime.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA can feed that dashboard with governed data so cash release is clear.",
+              weak:
+                "Estimates are a start. CODA provides real duplication rates to refine them.",
+              bad:
+                "Carrying extra hides waste. CODA proves where buffers can shrink safely.",
+            },
+          },
+          {
+            id: "mfg-exec-2",
+            text: "What evidence would you need to fund a 4-week pilot?",
+            options: [
+              "Forecasted cash release plus plan to scale across plants.",
+              "A few reports showing data quality trends.",
+              "Proof that planners accept another tool.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Map CODA outputs directly to that cash forecast and rollout plan.",
+              weak:
+                "Reports without financial linkage won’t unlock budget. Reframe toward measurable KPIs.",
+              bad:
+                "Tool tolerance is secondary. Lead with business outcomes.",
+            },
+          },
+          {
+            id: "mfg-exec-3",
+            text: "When duplicate materials slip in, what hurts most?",
+            options: [
+              "Higher carrying costs and missed savings targets.",
+              "Maintenance slows because techs can’t find the right part.",
+              "No real impact—we just stock more to be safe.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Connect CODA’s deduplication to the KPIs leadership tracks.",
+              weak:
+                "Link maintenance friction back to cost and schedule to show impact.",
+              bad:
+                "Stocking more signals wasted cash. Use CODA to highlight reductions.",
+            },
+          },
+        ],
+      },
+      {
+        id: "mfgPlant",
+        name: "Plant Manager",
+        role: "Delivers uptime and OEE targets for a production site.",
+        shortDescription:
+          "Needs trusted BOMs and stock data so outages aren’t extended by wrong picks or missing parts.",
+        focusAreas: [
+          "Uptime and schedule adherence",
+          "Reducing reliance on tribal knowledge",
+          "Confidence in stock availability",
+        ],
+        redPath:
+          "Tie master-data reliability to downtime avoidance, then show CODA reducing dependency on a few veterans.",
+        questions: [
+          {
+            id: "mfg-plant-1",
+            text: "When you plan maintenance, do teams trust system data or rely on experts?",
+            options: [
+              "System is trusted for planning and picking.",
+              "We mix system data with tribal knowledge depending on the shift.",
+              "Mostly experience—system data isn’t reliable enough.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that trust high by preventing spec drift across sites.",
+              weak:
+                "Mixing signals risk. CODA captures expert nuance and standardizes it.",
+              bad:
+                "Experience-only is fragile. CODA protects uptime when key people are out.",
+            },
+          },
+          {
+            id: "mfg-plant-2",
+            text: "How often does unclear material data extend an outage?",
+            options: [
+              "Rarely—we validate BOMs ahead of time.",
+              "Occasionally, we scramble for substitutes during the window.",
+              "It happens a lot; we improvise on the fly.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA can automate those checks and keep outages on track.",
+              weak:
+                "Scrambling is costly. CODA pre-approves alternates and cuts risk.",
+              bad:
+                "Frequent improvisation screams risk. CODA enforces clarity so windows stay on schedule.",
+            },
+          },
+          {
+            id: "mfg-plant-3",
+            text: "What backup exists when key planners are unavailable?",
+            options: [
+              "Standard playbooks and clean masters so anyone can step in.",
+              "Some guides exist, but we depend on a few people for tricky parts.",
+              "No backup—we wait for them to return.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Playbooks plus CODA keep operations resilient and reduce single points of failure.",
+              weak:
+                "Partial coverage is risky. CODA encodes tricky details into standards everyone follows.",
+              bad:
+                "Waiting stalls production. CODA is the safety net for continuity.",
+            },
+          },
+        ],
+      },
+      {
+        id: "mfgProcurement",
+        name: "Procurement Lead",
+        role: "Secures materials at the right cost, quality, and speed.",
+        shortDescription:
+          "Needs standardized specs to negotiate confidently, avoid maverick spend, and enable supplier consolidation.",
+        focusAreas: [
+          "Duplicate prevention during sourcing",
+          "Speed to RFQ with complete specs",
+          "Supplier consolidation based on normalized spend",
+        ],
+        redPath:
+          "Anchor on savings leakage from duplicates, then show CODA accelerating intake and enabling supplier rationalization.",
+        questions: [
+          {
+            id: "mfg-proc-1",
+            text: "How do you avoid buying the same part under multiple descriptions?",
+            options: [
+              "Buyers spot duplicates during PO creation.",
+              "Governed catalog blocks duplicates before requisitions are approved.",
+              "We don’t worry—vendors correct us if we order wrong.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "Governed catalogs align with CODA. Rapid vendor onboarding keeps it current.",
+              weak:
+                "Human checks miss patterns. CODA surfaces duplicates instantly.",
+              bad:
+                "Relying on vendors risks price creep. CODA gives procurement control.",
+            },
+          },
+          {
+            id: "mfg-proc-2",
+            text: "What slows sourcing when engineering requests a new material?",
+            options: [
+              "Specs are unclear so we iterate over email.",
+              "We use a template that requires standard attributes up front.",
+              "We place a quick order with the usual vendor to save time.",
+            ],
+            bestOptionIndex: 1,
+            feedback: {
+              best:
+                "Templates are solid. CODA can prefill and validate to go faster.",
+              weak:
+                "Email loops waste time. CODA structures intake and proposes matches automatically.",
+              bad:
+                "Defaulting to one vendor hides options. CODA encourages competitive sourcing with clean data.",
+            },
+          },
+          {
+            id: "mfg-proc-3",
+            text: "How do you choose suppliers to consolidate first?",
+            options: [
+              "We analyze normalized spend and specs to find overlap.",
+              "We pick highest spend vendors regardless of category.",
+              "We negotiate only at renewal without deep analysis.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA’s standardized specs give confidence to consolidate aggressively.",
+              weak:
+                "High spend is a start; CODA reveals hidden overlaps.",
+              bad:
+                "Waiting leaves value. CODA enables proactive category strategies.",
+            },
+          },
+        ],
+      },
+      {
+        id: "mfgQuality",
+        name: "Quality / Engineering",
+        role: "Protects product quality and compliance across lines.",
+        shortDescription:
+          "Needs harmonized specs and BOMs so variants stay controlled and recalls are traceable.",
+        focusAreas: [
+          "BOM integrity and revision control",
+          "Spec harmonization across variants",
+          "Traceability for audits",
+        ],
+        redPath:
+          "Map inconsistent specs to quality risk, then show CODA enforcing harmonization and lineage across lines.",
+        questions: [
+          {
+            id: "mfg-qual-1",
+            text: "How do you keep BOMs synchronized when components change?",
+            options: [
+              "We run governed change control with clear approvals.",
+              "Project teams update BOMs when reminded.",
+              "We assume BOMs are correct unless an audit flags an issue.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA strengthens that control and keeps alternates aligned.",
+              weak:
+                "Ad-hoc updates miss issues. CODA provides continuous validation.",
+              bad:
+                "Assumptions risk non-conformance. CODA surfaces mismatches early.",
+            },
+          },
+          {
+            id: "mfg-qual-2",
+            text: "When plants use different specs for similar parts, how do you reconcile them?",
+            options: [
+              "We harmonize to a corporate standard and document why.",
+              "We debate case by case depending on who leads the project.",
+              "Each plant keeps its own spec if it works.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA keeps that decision visible and prevents drift across plants.",
+              weak:
+                "Case-by-case slows teams. CODA accelerates consensus with data.",
+              bad:
+                "Autonomy dilutes quality. CODA enforces the chosen standard.",
+            },
+          },
+          {
+            id: "mfg-qual-3",
+            text: "How do you trace which spec version is in a shipped product?",
+            options: [
+              "Governed masters with history and approvals.",
+              "We reconstruct from emails and change logs when needed.",
+              "We don’t trace unless there is a major issue.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA provides the lineage and approvals to make traceability easy.",
+              weak:
+                "Reconstruction wastes time. CODA keeps the record ready for audits.",
+              bad:
+                "No traceability risks recalls. CODA establishes continuous evidence.",
+            },
+          },
+        ],
+      },
+      {
+        id: "mfgDigital",
+        name: "Digital / Analytics Lead",
+        role: "Delivers analytics, IoT, and automation tied to production outcomes.",
+        shortDescription:
+          "Links digital success to standardized master data so initiatives don’t stall from inconsistent records.",
+        focusAreas: [
+          "Reliable master data powering analytics",
+          "Data readiness for automation",
+          "Change adoption across plants",
+        ],
+        redPath:
+          "Show how CODA cleanses and standardizes data to unblock digital initiatives, then co-design a proof for a priority line.",
+        questions: [
+          {
+            id: "mfg-dig-1",
+            text: "Which digital programs struggle because of data quality?",
+            options: [
+              "Predictive maintenance and OEE analytics.",
+              "Procurement visibility across plants.",
+              "We don’t have data quality issues slowing us down.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Tie CODA cleansing directly to predictive maintenance wins.",
+              weak:
+                "Visibility matters, but connect it back to digital KPIs.",
+              bad:
+                "Hidden issues surface later. Use CODA to prove readiness before scaling.",
+            },
+          },
+          {
+            id: "mfg-dig-2",
+            text: "How do you measure whether data quality is improving?",
+            options: [
+              "We track completeness, duplicates, and error rates per system.",
+              "We spot-check when projects fail tests.",
+              "We rely on vendor SLAs.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "CODA can feed those metrics and keep them moving in the right direction.",
+              weak:
+                "Spot checks are reactive. Offer a CODA dashboard to make progress visible.",
+              bad:
+                "Relying on SLAs hides risk. CODA provides transparency and control.",
+            },
+          },
+          {
+            id: "mfg-dig-3",
+            text: "What does success look like for your next release?",
+            options: [
+              "Higher adoption and trusted dashboards for planners.",
+              "Delivering on time even if data fidelity lags.",
+              "Just proving the technology works in a demo.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Map CODA outputs to adoption and trust so the release lands.",
+              weak:
+                "Timelines matter, but CODA can help you ship with quality intact.",
+              bad:
+                "Demos alone don’t stick. Use CODA to ensure production readiness.",
+            },
+          },
+        ],
+      },
+      {
+        id: "categoryManager",
+        name: "Category Manager / Strategic Sourcing",
+        role: "Owns category strategy, supplier rationalization, and savings targets.",
+        shortDescription:
+          "Wants harmonized supplier and material data so price comparisons are fair and savings are defensible.",
+        focusAreas: [
+          "Price variance across sites for identical items",
+          "Centralized supplier and material standards",
+          "Proof points for savings and negotiations",
+        ],
+        redPath:
+          "Uncover fragmented supplier pricing, then use CODA to normalize specs and expose consolidation opportunities.",
+        questions: [
+          {
+            id: "cat-1",
+            text: "Do you maintain centralized supplier and material data for your category?",
+            options: [
+              "Yes—one governed catalog across sites.",
+              "Partly—we centralize top spend but some sites keep local lists.",
+              "No, each site manages its own suppliers and item data.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Centralization gives leverage. CODA can keep it clean and highlight overlap for faster negotiations.",
+              weak:
+                "Partial control hides leakage. CODA will normalize remaining items to reveal savings.",
+              bad:
+                "Decentralized data hurts strategy. Position CODA as the hub that creates a single sourcing view.",
+            },
+          },
+          {
+            id: "cat-2",
+            text: "How do you check if suppliers offer different prices for the same item across sites?",
+            options: [
+              "We compare normalized specs and price files regularly.",
+              "We review a few key items manually when renewing contracts.",
+              "We rely on sites to negotiate locally and assume it's optimized.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Excellent. CODA can automate those comparisons and surface hidden variances instantly.",
+              weak:
+                "Manual spot checks miss value. CODA scales the analysis across the catalog.",
+              bad:
+                "Assuming optimization leaves savings on the table. Use CODA to prove the gap quickly.",
+            },
+          },
+          {
+            id: "cat-3",
+            text: "When you build a negotiation pack, how confident are you in the underlying specs?",
+            options: [
+              "Very confident—attributes are standardized and audited.",
+              "Somewhat—we clean them before major events.",
+              "Not confident—we rely on supplier quotes to figure it out.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Great. CODA keeps specs audit-ready so negotiation packs stay credible.",
+              weak:
+                "Pre-event cleanup is slow. CODA keeps specs clean continuously so you negotiate faster.",
+              bad:
+                "Relying on suppliers erodes leverage. Position CODA as the data backbone for tough negotiations.",
+            },
+          },
+        ],
+      },
+      {
+        id: "digitalLead",
+        name: "Digital Transformation Lead",
+        role: "Drives automation, IoT, and analytics programs that rely on clean data.",
+        shortDescription:
+          "Links digital success to standardized master data so initiatives don't stall from inconsistent records.",
+        focusAreas: [
+          "Data readiness for digital and automation use cases",
+          "Cross-site standards that enable scaling",
+          "Governed corrections when gaps appear",
+        ],
+        redPath:
+          "Connect failed digital projects to data quality, then propose a readiness check on a high-visibility use case.",
+        questions: [
+          {
+            id: "dig-1",
+            text: "How do you ensure digital and automation initiatives are backed by clean, standardized data?",
+            options: [
+              "We embed data quality checks into every initiative.",
+              "We try, but standards vary by site.",
+              "We assume IT handles it behind the scenes.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Strong discipline. CODA can accelerate those checks and keep standards enforced as you scale.",
+              weak:
+                "Variation by site is common. CODA harmonizes standards so use cases scale consistently.",
+              bad:
+                "Assumptions stall programs. Position CODA as the data readiness layer for your roadmap.",
+            },
+          },
+          {
+            id: "dig-2",
+            text: "Do differences in naming or classification slow down rolling a use case across multiple plants?",
+            options: [
+              "No—we maintain consistent taxonomies everywhere.",
+              "Sometimes—we adjust mappings when we find issues.",
+              "Yes—each rollout needs custom work to map the data.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Consistency is gold. CODA keeps that taxonomy synchronized as new data arrives.",
+              weak:
+                "Manual mapping wastes time. CODA automates harmonization so rollouts stay fast.",
+              bad:
+                "Custom work per site kills scale. CODA standardizes the data fabric to unblock deployments.",
+            },
+          },
+          {
+            id: "dig-3",
+            text: "What signal tells you a use case is at risk because of data quality?",
+            options: [
+              "Leading indicators like rising exceptions or model drift.",
+              "We notice when users complain about bad suggestions.",
+              "We don't track it—the team just fixes issues as they appear.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Great. CODA can feed those indicators with real-time quality metrics tied to the use case.",
+              weak:
+                "User complaints are lagging. CODA surfaces quality risk before adoption drops.",
+              bad:
+                "No signal equals surprises. CODA establishes the monitoring layer you need to scale.",
+            },
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 const industryListEl = document.getElementById("industryList");
