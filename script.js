@@ -1418,6 +1418,146 @@ const verticals = [
           },
         ],
       },
+      {
+        id: "categoryManager",
+        name: "Category Manager / Strategic Sourcing",
+        role: "Owns category strategy, supplier rationalization, and savings targets.",
+        shortDescription:
+          "Wants harmonized supplier and material data so price comparisons are fair and savings are defensible.",
+        focusAreas: [
+          "Price variance across sites for identical items",
+          "Centralized supplier and material standards",
+          "Proof points for savings and negotiations",
+        ],
+        redPath:
+          "Uncover fragmented supplier pricing, then use CODA to normalize specs and expose consolidation opportunities.",
+        questions: [
+          {
+            id: "cat-1",
+            text: "Do you maintain centralized supplier and material data for your category?",
+            options: [
+              "Yes—one governed catalog across sites.",
+              "Partly—we centralize top spend but some sites keep local lists.",
+              "No, each site manages its own suppliers and item data.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Centralization gives leverage. CODA can keep it clean and highlight overlap for faster negotiations.",
+              weak:
+                "Partial control hides leakage. CODA will normalize remaining items to reveal savings.",
+              bad:
+                "Decentralized data hurts strategy. Position CODA as the hub that creates a single sourcing view.",
+            },
+          },
+          {
+            id: "cat-2",
+            text: "How do you check if suppliers offer different prices for the same item across sites?",
+            options: [
+              "We compare normalized specs and price files regularly.",
+              "We review a few key items manually when renewing contracts.",
+              "We rely on sites to negotiate locally and assume it's optimized.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Excellent. CODA can automate those comparisons and surface hidden variances instantly.",
+              weak:
+                "Manual spot checks miss value. CODA scales the analysis across the catalog.",
+              bad:
+                "Assuming optimization leaves savings on the table. Use CODA to prove the gap quickly.",
+            },
+          },
+          {
+            id: "cat-3",
+            text: "When you build a negotiation pack, how confident are you in the underlying specs?",
+            options: [
+              "Very confident—attributes are standardized and audited.",
+              "Somewhat—we clean them before major events.",
+              "Not confident—we rely on supplier quotes to figure it out.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Great. CODA keeps specs audit-ready so negotiation packs stay credible.",
+              weak:
+                "Pre-event cleanup is slow. CODA keeps specs clean continuously so you negotiate faster.",
+              bad:
+                "Relying on suppliers erodes leverage. Position CODA as the data backbone for tough negotiations.",
+            },
+          },
+        ],
+      },
+      {
+        id: "digitalLead",
+        name: "Digital Transformation Lead",
+        role: "Drives automation, IoT, and analytics programs that rely on clean data.",
+        shortDescription:
+          "Links digital success to standardized master data so initiatives don't stall from inconsistent records.",
+        focusAreas: [
+          "Data readiness for digital and automation use cases",
+          "Cross-site standards that enable scaling",
+          "Governed corrections when gaps appear",
+        ],
+        redPath:
+          "Connect failed digital projects to data quality, then propose a readiness check on a high-visibility use case.",
+        questions: [
+          {
+            id: "dig-1",
+            text: "How do you ensure digital and automation initiatives are backed by clean, standardized data?",
+            options: [
+              "We embed data quality checks into every initiative.",
+              "We try, but standards vary by site.",
+              "We assume IT handles it behind the scenes.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Strong discipline. CODA can accelerate those checks and keep standards enforced as you scale.",
+              weak:
+                "Variation by site is common. CODA harmonizes standards so use cases scale consistently.",
+              bad:
+                "Assumptions stall programs. Position CODA as the data readiness layer for your roadmap.",
+            },
+          },
+          {
+            id: "dig-2",
+            text: "Do differences in naming or classification slow down rolling a use case across multiple plants?",
+            options: [
+              "No—we maintain consistent taxonomies everywhere.",
+              "Sometimes—we adjust mappings when we find issues.",
+              "Yes—each rollout needs custom work to map the data.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Consistency is gold. CODA keeps that taxonomy synchronized as new data arrives.",
+              weak:
+                "Manual mapping wastes time. CODA automates harmonization so rollouts stay fast.",
+              bad:
+                "Custom work per site kills scale. CODA standardizes the data fabric to unblock deployments.",
+            },
+          },
+          {
+            id: "dig-3",
+            text: "What signal tells you a use case is at risk because of data quality?",
+            options: [
+              "Leading indicators like rising exceptions or model drift.",
+              "We notice when users complain about bad suggestions.",
+              "We don't track it—the team just fixes issues as they appear.",
+            ],
+            bestOptionIndex: 0,
+            feedback: {
+              best:
+                "Great. CODA can feed those indicators with real-time quality metrics tied to the use case.",
+              weak:
+                "User complaints are lagging. CODA surfaces quality risk before adoption drops.",
+              bad:
+                "No signal equals surprises. CODA establishes the monitoring layer you need to scale.",
+            },
+          },
+        ],
+      },
     ],
   },
 ];
