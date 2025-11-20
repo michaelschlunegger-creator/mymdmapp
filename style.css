@@ -122,6 +122,26 @@ ul {
   color: #fff;
 }
 
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 6px;
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 10px 12px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+}
+
+.metric-value {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 .hero-logo {
   position: absolute;
   top: 18px;
