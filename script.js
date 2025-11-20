@@ -2209,6 +2209,13 @@ const verticals = [
           },
         ],
       },
+    ],
+  },
+  {
+    id: "financialServices",
+    name: "Financial Services",
+    description: "Banks, insurers, and fintechs balancing growth, risk, and regulatory control.",
+    personas: [
       {
         id: "fsRisk",
         name: "Risk & Compliance Officer",
@@ -2735,6 +2742,26 @@ let currentIndustry = null;
 let currentPersona = null;
 let currentQuestionIndex = 0;
 let totalQuestions = 0;
+let displayedQuestionText = "";
+
+function hydratePersonas() {
+  verticals.forEach((industry) => {
+    (industry.personas || []).forEach((persona) => {
+      const profile = personaProfiles[persona.id];
+      if (profile) {
+        persona.personName = profile.personName || persona.personName;
+        persona.company = profile.company || persona.company;
+        persona.avatar = profile.avatar || persona.avatar;
+        persona.bio = profile.bio || persona.bio;
+      }
+    });
+  });
+}
+
+function personaDisplayName(persona) {
+  return persona?.personName || persona?.name || "Selected contact";
+}
+let displayedQuestionText = "";
 
 function hydratePersonas() {
   verticals.forEach((industry) => {
