@@ -91,6 +91,8 @@ ul {
   box-shadow: 0 28px 70px rgba(5, 8, 18, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px) saturate(150%);
   border: 1px solid rgba(255, 255, 255, 0.28);
+  overflow: hidden;
+  word-break: break-word;
 }
 
 .hero-card::after {
@@ -170,8 +172,9 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 10px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.22);
   font-weight: 600;
@@ -314,6 +317,7 @@ ul {
   font-size: 0.85rem;
   color: #dfe7ff;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 22px rgba(0, 0, 0, 0.28);
+  word-break: break-word;
 }
 
 .persona-brief .grid-two {
@@ -399,13 +403,14 @@ ul {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
   border: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 0.9rem;
   color: #dfe7ff;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  word-break: break-word;
 }
 
 .badge strong {
@@ -433,6 +438,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.06);
   background: linear-gradient(140deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  word-break: break-word;
 }
 
 .stage-type {
@@ -486,6 +492,7 @@ ul {
   backdrop-filter: blur(10px) saturate(140%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 36px rgba(0, 0, 0, 0.32);
   color: #e8edf7;
+  word-break: break-word;
 }
 
 .answer-button:hover {
