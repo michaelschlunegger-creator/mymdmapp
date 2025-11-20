@@ -8,6 +8,7 @@ A fully deterministic, browser-based Master Data Management (MDM) sales training
 - Every scenario begins with a dramatic open question that hooks the persona on cost or risk. Subsequent stages convert into closed questions so students narrow scope before the final PoC ask.
 - Each answer is clearly labeled **Optimal**, **Medium**, or **Unfavorable**, with context explaining why and how it shifts the red path.
 - The right rail surfaces real-time feedback (why the answer mattered, what the persona is thinking, and the next step on the red path) plus an end-of-session evaluation.
+- The hero banner tracks library coverage (industries, personas, and total questions) while context badges remind you which persona, focus areas, and red-path goal you are currently running.
 
 ## Project structure
 
@@ -25,6 +26,12 @@ All persona packs, scenarios, and evaluation logic are stored inside `script.js`
 
    ```bash
    python -m http.server 8000
+   ```
+
+   Or simply run the helper script:
+
+   ```bash
+   ./serve.sh
    ```
 
 2. Open `http://localhost:8000` in your browser.
