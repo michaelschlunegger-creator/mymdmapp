@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+
 :root {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Poppins", "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #e8edf7;
   background-color: #060912;
 }
@@ -93,6 +95,9 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.28);
   overflow: hidden;
   word-break: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .hero-card::after {
@@ -106,8 +111,8 @@ ul {
 }
 
 .metrics-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   margin: 16px 0 6px;
 }
@@ -115,7 +120,7 @@ ul {
 .metric {
   background: rgba(255, 255, 255, 0.16);
   border-radius: 16px;
-  padding: 10px 12px;
+  padding: 12px 14px;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
@@ -283,6 +288,13 @@ ul {
 
 .persona-brief h2 {
   margin-bottom: 8px;
+}
+
+.persona-brief p,
+.persona-brief li,
+.persona-brief h2,
+.persona-brief h3 {
+  text-align: left;
 }
 
 .persona-header {
@@ -467,8 +479,10 @@ ul {
 }
 
 .current-question {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 
@@ -542,6 +556,21 @@ ul {
   gap: 12px;
 }
 
+.feedback-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.feedback-note {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
 
 .feedback-card {
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -583,7 +612,7 @@ ul {
   }
 
   .metrics-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-direction: column;
   }
 
   .conversation-log {

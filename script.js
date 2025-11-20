@@ -2768,7 +2768,12 @@ function handleAnswer(question, selectedIndex) {
     question.options[selectedIndex],
     evaluation.quality
   );
-  updateFeedback(evaluation.feedbackMessage, evaluation.quality);
+  updateFeedback(
+    evaluation.feedbackMessage,
+    evaluation.quality,
+    question,
+    displayedQuestionText || question.text
+  );
   currentQuestionIndex += 1;
   refreshProgress(currentQuestionIndex, totalQuestions);
   renderCurrentQuestion();
@@ -2823,12 +2828,20 @@ function addConversationEntry(question, answer, quality) {
   conversationLogEl.scrollTop = conversationLogEl.scrollHeight;
 }
 
-function updateFeedback(feedback, quality) {
+function updateFeedback(feedback, quality, question, displayedQuestion) {
+  const importance = buildImportanceNote(question, displayedQuestion);
+  const coachingCue = buildCoachingCue(quality);
+
   feedbackContentEl.innerHTML = `
     <div class="feedback-card">
-      <p><strong>Quality:</strong> ${quality}</p>
-      <p>${ensureSentence(feedback)}</p>
-      <p><strong>Next step:</strong> Keep probing with CODA outcomes in mind.</p>
+      <div class="feedback-details">
+        <p><strong>Quality:</strong> ${quality}</p>
+        <div class="feedback-note"><strong>Why this question matters:</strong> ${importance}</div>
+        <div class="feedback-note"><strong>Coaching cue:</strong> ${coachingCue}</div>
+        <div class="feedback-note"><strong>Persona-specific guidance:</strong> ${ensureSentence(
+          feedback
+        )}</div>
+      </div>
     </div>
   `;
 }
@@ -2880,23 +2893,27 @@ function getQualityClass(quality) {
   }
 }
 
+function ensureQuestion(text) {
+  if (typeof text !== "string") return "How does this impact your operation?";
+  const trimmed = text.trim();
+  if (!trimmed) return "How does this impact your operation?";
+  const sanitized = trimmed.replace(/[?]+$/, "");
+  return `${sanitized}?`;
+}
+
 function formatOpeningQuestion(questionText, isFirstQuestion) {
-  const trimmed = typeof questionText === "string" ? questionText.trim() : "";
+  const baseQuestion = ensureQuestion(typeof questionText === "string" ? questionText.trim() : "");
 
   if (!isFirstQuestion) {
-    return trimmed || questionText;
+    return baseQuestion;
   }
 
-  const strongPrefix = "Let's cut straight to the impact—";
-  if (!trimmed) {
-    return `${strongPrefix} what outcome are you solving for right now?`;
-  }
+  const industryName = currentIndustry?.name || "this industry";
+  const personaLabel = currentPersona?.role || currentPersona?.name || "leader";
+  const focusPunch = (currentPersona?.focusAreas || [])[0] || "working capital and reliability";
+  const dramaticHook = `Recently, a ${personaLabel} in ${industryName} unlocked $10M by eliminating 10% duplicate stock tied to ${focusPunch}—`;
 
-  if (trimmed.startsWith(strongPrefix)) {
-    return trimmed;
-  }
-
-  return `${strongPrefix} ${trimmed}`;
+  return ensureQuestion(`${dramaticHook} ${baseQuestion}`);
 }
 
 function ensureSentence(text) {
@@ -2908,6 +2925,32 @@ function ensureSentence(text) {
     return trimmed;
   }
   return `${trimmed}.`;
+}
+
+function buildImportanceNote(question, displayedQuestion) {
+  const focusAreas = currentPersona?.focusAreas || [];
+  const focusSummary = focusAreas.slice(0, 2).join(" and ") || "cash, reliability, and control";
+  const topicSource =
+    (typeof displayedQuestion === "string" && displayedQuestion.trim()) ||
+    (typeof question?.text === "string" && question.text.trim()) ||
+    "this topic";
+  const topic = typeof topicSource === "string" ? topicSource.toLowerCase() : "this topic";
+
+  return ensureSentence(
+    `This opener combines a proof point with ${topic.toLowerCase()} to test how the persona links data quality to ${focusSummary}. It sets up CODA as the fastest path to repeat that win.`
+  ).replace("..", ".");
+}
+
+function buildCoachingCue(quality) {
+  const personaOutcome = currentPersona?.redPath || "Guide toward an evidence-backed PoC.";
+  const baseCue =
+    quality === "Optimal"
+      ? "Strong response—affirm the impact and suggest how CODA proves it in a 4-week pulse."
+      : quality === "Medium"
+      ? "Good instinct—tighten the link to business KPIs so the persona feels the urgency."
+      : "Reframe with a crisp business outcome before diving into details to keep credibility high.";
+
+  return ensureSentence(`${baseCue} ${personaOutcome}`);
 }
 
 init();
