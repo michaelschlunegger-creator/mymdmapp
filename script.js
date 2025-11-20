@@ -1992,13 +1992,6 @@ const verticals = [
           },
         ],
       },
-    ],
-  },
-  {
-    id: "manufacturing",
-    name: "Manufacturing",
-    description: "Discrete production with multi-site plants and complex supplier networks.",
-    personas: [
       {
         id: "retailInventory",
         name: "Inventory Planning Manager",
@@ -2525,6 +2518,7 @@ let currentIndustry = null;
 let currentPersona = null;
 let currentQuestionIndex = 0;
 let totalQuestions = 0;
+let displayedQuestionText = "";
 
 function init() {
   renderLibraryMetrics();
@@ -2720,6 +2714,7 @@ function startRoleplay() {
   if (!currentPersona) return;
   currentQuestionIndex = 0;
   totalQuestions = currentPersona.questions.length;
+  displayedQuestionText = "";
   scenarioTitleEl.textContent = `${currentPersona.name} Roleplay`;
   scenarioDescriptionEl.textContent = currentPersona.shortDescription;
   restartButton.disabled = false;
@@ -2735,6 +2730,7 @@ function resetConversation() {
     '<p class="empty-state">No dialogue yet. Select a persona and start the roleplay.</p>';
   currentPromptEl.innerHTML = "<strong>Question:</strong> —";
   answerOptionsEl.innerHTML = "";
+  displayedQuestionText = "";
   feedbackContentEl.innerHTML =
     '<p>Answer quality, context, and the recommended red path will appear here.</p>';
   restartButton.disabled = true;
@@ -2749,7 +2745,11 @@ function renderCurrentQuestion() {
     return;
   }
 
-  currentPromptEl.innerHTML = `<strong>Question:</strong> ${question.text}`;
+  displayedQuestionText = formatOpeningQuestion(
+    question.text,
+    currentQuestionIndex === 0
+  );
+  currentPromptEl.innerHTML = `<strong>Question:</strong> ${displayedQuestionText}`;
   answerOptionsEl.innerHTML = "";
 
   question.options.forEach((optionText, index) => {
@@ -2763,7 +2763,11 @@ function renderCurrentQuestion() {
 
 function handleAnswer(question, selectedIndex) {
   const evaluation = evaluateAnswer(question, selectedIndex);
-  addConversationEntry(question.text, question.options[selectedIndex], evaluation.quality);
+  addConversationEntry(
+    displayedQuestionText || question.text,
+    question.options[selectedIndex],
+    evaluation.quality
+  );
   updateFeedback(evaluation.feedbackMessage, evaluation.quality);
   currentQuestionIndex += 1;
   refreshProgress(currentQuestionIndex, totalQuestions);
@@ -2874,6 +2878,25 @@ function getQualityClass(quality) {
     default:
       return "quality-unfavorable";
   }
+}
+
+function formatOpeningQuestion(questionText, isFirstQuestion) {
+  const trimmed = typeof questionText === "string" ? questionText.trim() : "";
+
+  if (!isFirstQuestion) {
+    return trimmed || questionText;
+  }
+
+  const strongPrefix = "Let's cut straight to the impact—";
+  if (!trimmed) {
+    return `${strongPrefix} what outcome are you solving for right now?`;
+  }
+
+  if (trimmed.startsWith(strongPrefix)) {
+    return trimmed;
+  }
+
+  return `${strongPrefix} ${trimmed}`;
 }
 
 function ensureSentence(text) {
