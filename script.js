@@ -1992,6 +1992,13 @@ const verticals = [
           },
         ],
       },
+    ],
+  },
+  {
+    id: "manufacturing",
+    name: "Manufacturing",
+    description: "Discrete production with multi-site plants and complex supplier networks.",
+    personas: [
       {
         id: "retailInventory",
         name: "Inventory Planning Manager",
